@@ -1,0 +1,69 @@
+header p{
+	font-size: 20px;
+}
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+.title {
+	margin-left:20px;
+}
+.goback {
+	text-decoration: none; 
+	color: black;
+}
+
+.goback span{
+	margin-top: 20px;
+	font-size:40px;
+	color: black;
+}
+
+hr {
+	width: 100%;
+}
+section {
+	margin: 0 auto;
+}
+.input-phone {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-left: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#dialCode {
+    background-color: white;
+    border-right: none;
+}
+
+.btn-login {
+	width: 100%;
+	padding: 10px; 
+	background-color: #EA0B8C;
+	color: #fff;
+}
+section a {
+	text-decoration: none;
+	font-size: 30px;
+}
+footer {
+	position: absolute;
+	bottom:0px;
+    right:0px;
+    left: 0px;
+	margin-bottom: 10px;
+}

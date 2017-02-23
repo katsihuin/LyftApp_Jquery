@@ -1,0 +1,66 @@
+
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+
+.title {
+	margin-left:20px;
+}
+.lastname-pst {
+    display: inline-block;
+}
+
+hr {
+	width: 100%;
+}
+
+section {
+	margin: 0 auto;
+
+}
+#commentName {
+	border-right: none;
+}
+
+#commentLastName {
+	border-left: none;
+}
+/* invalida los inputs */
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+.spanLastName {
+    padding: 0;
+    background-color: #fff;
+    border-right: none;
+	border-left: none;
+}
+footer a .btn-login {
+	width: 100%;
+	padding: 10px; 
+	border:none;
+	border-radius: 5px;
+	background-color: #FC1EBF;
+	color: #fff;
+}
+
+section a {
+	text-decoration: none;
+	font-size: 30px;
+}
+
+footer {
+	position: absolute;
+	bottom:0px;
+    right:0px;
+    left: 0px;
+	margin-bottom: 10px;
+}
+
+

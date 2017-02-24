@@ -81,13 +81,14 @@ function firstToUpperCase(_texto)
 	return result;
 }
 
+
 /* Valida Nombre*/
 function validateName()
 {
-	var inputName = document.getElementById("commentName");
-	var name =  inputName.value;
+	var inputName = ($'commentName');
+	var name =  inputName.val;
 
-	inputName.value = firstToUpperCase(name);
+	inputName.val = firstToUpperCase(name);
 
 	if (name.length == 0)
 	{

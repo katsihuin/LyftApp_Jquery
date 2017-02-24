@@ -28,13 +28,14 @@ section {
 	border-left: none;
 }
 /* invalida los inputs */
-input.invalid, textarea.invalid{
-	border: 2px solid red;
+input.invalid {
+	background-color: #ff4d4d;   
 }
 
-input.valid, textarea.valid{
-	border: 2px solid green;
+input.valid {
+	background-color: #47d147;
 }
+
 .spanLastName {
     padding: 0;
     background-color: #fff;

@@ -36,22 +36,20 @@
 						<div class="col-md-10 col-md-offset-1">
 						    <form name="myForm" action="/app.html" onsubmit="return validateForm()" method="post">
 						        <div class="form-group">
-						        <div class="input-group">
-							        	<span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
-							          	<input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name" onkeyup="validateName()">
-							          	<span class="input-group-addon spanLastName"></span>
-							          	<input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name" onkeyup="validateLastName()">
+                                    <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                                            <input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name" onkeyup="validateName()">
+                                           
+                                            <span class="input-group-addon spanLastName"></span>
+                                            <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name" onkeyup="validateLastName()">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                                        <input id="commentEmail" name="lastname" type="text" class="form-control" required placeholder="Email" onkeyup="validateEmail()">
+                                    </div>
 						        </div>
-                                <span id="commentNamePrompt"></span>
-						     	<span id="comentLastNamePrompt"></span>
-
-						        <br>
-						        <div class="input-group">
-						          	<div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-						          	<input id="commentEmail" name="lastname" type="text" class="form-control" required placeholder="Email" onkeyup="validateEmail()">
-						        </div>
-						        <span id="commentEmailPrompt"></span>
-						     </div>
+						      <span id="commentPrompt" style="font-size: 25px"></span>
 						    </form>
 							
 					 	</div>
@@ -62,13 +60,14 @@
 				<div class="container">
 					<div class="row ">
 						<div class="col-md-10 col-xs-offset-1 text-center">
-						<div class="checkbox">
-							<input type="checkbox" name="" id="commentInfo" onkeyup="validateInfo()"> I agree to Lyft's <span style="color:#40A9DD"> Terms of Service</span>
-						</div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="" id="commentInfo" onkeyup="validateInfo()"> I agree to Lyft's <span style="color:#40A9DD"> Terms of Service</span>
+                            </div>
 						</div>
 					</div>
 				</div>
 			</section>
+			
 			<footer>
 				<div class="container">
 					<div class="row">
@@ -80,9 +79,8 @@
 			</footer>
 		</div>
 	</div>
-
+    <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
 	<script src="js/login.js"></script>
-	<script src="js/main.js"></script>
-
+	
 </body>
 </html>

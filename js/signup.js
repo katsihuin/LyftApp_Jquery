@@ -1,7 +1,7 @@
 function initSignUp() {
 
-    var flag = document.getElementById("flag");
-    var dialCode = document.getElementById("dialCode");
+    var flag = $('flag');
+    var dialCode = $('dialCode');
     
     var getFlag = localStorage.getItem('country',flag);
 	var getDialCode = localStorage.getItem('dialCode',dialCode);
@@ -19,7 +19,7 @@ function keyPresss(event) {
     }
 }
 
-document.getElementsByTagName('input').addEventListener('keydown', keyPresss);
+$('input').keydown(keyPresss);
 /*function getCountry()
 {
     var inputCountry = country.value;

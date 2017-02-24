@@ -1,10 +1,16 @@
 $(document).ready(function() {
 	//jQuery va aqui
     $('#commentName').on('input', function() {
-        var input=$(this);
-        var is_name=input.val();
-        if(is_name){input.removeClass("invalid").addClass("valid");}
-        else{input.removeClass("valid").addClass("invalid");}
+        var inputName=$(this);
+        var name=inputName.val();
+        if(name){inputName.removeClass("invalid").addClass("valid");}
+        else{inputName.removeClass("valid").addClass("invalid");}
+    });
+     $('#commentLastName').on('input', function() {
+        var inputLastName=$(this);
+        var lastName=inputLastName.val();
+        if(lastName){inputLastName.removeClass("invalid").addClass("valid");}
+        else{inputLastName.removeClass("valid").addClass("invalid");}
     });
     $('#commentEmail').on('input', function() {
         var email =$(this);
@@ -42,7 +48,7 @@ function validateForm()
 	else
 	{
         var valid;
-        var sendForm=document.getElementById("sendForm");
+        var sendForm=$('sendForm');
       	sendForm.href="app.html";
 		jsShow("commentPrompt");
 		producePrompt("Formulario Validado Exitósamente", "commentPrompt", "green");
@@ -52,19 +58,19 @@ function validateForm()
 /* Muestra mensaje validación */
 function jsShow(id)
 {
-	document.getElementById(id).style.display="block";
+	$('#id').css({'display':'block'});
 }
 
 /* Oculta mensaje validación */
 function jsHide(id)
 {
-	document.getElementById(id).style.display="none";
+	$('#id').css({'display':'none'});
 }
 /* Envia Mensaje al usuario*/
 function producePrompt(message, promptLocation, color)
 {
-	document.getElementById(promptLocation).innerHTML = message;
-	document.getElementById(promptLocation).style.color = color;
+	$('promptLocation').html = message;
+	$('promptLocation').css({'color':'color'});
     
 }
 

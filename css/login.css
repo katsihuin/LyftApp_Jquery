@@ -1,15 +1,5 @@
-
-
-header a {
-	text-decoration: none;
-	color: black;
-}
-
 .title {
 	margin-left:20px;
-}
-.lastname-pst {
-    display: inline-block;
 }
 
 hr {
@@ -20,6 +10,7 @@ section {
 	margin: 0 auto;
 
 }
+/* Getting rid of vertical lines on input boxes*/
 #commentName {
 	border-right: none;
 }
@@ -27,21 +18,30 @@ section {
 #commentLastName {
 	border-left: none;
 }
-/* invalida los inputs */
-input.invalid {
-	background-color: #ff4d4d;   
-}
-
-input.valid {
-	background-color: #47d147;
-}
-
+/* Last Name Span Erased */
 .spanLastName {
     padding: 0;
     background-color: #fff;
     border-right: none;
 	border-left: none;
 }
+
+/* Invalid input boxes */
+input.invalid {
+	border-color: #a94442;
+	background-color: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);  
+}
+
+input.valid {
+	border-color: #3c763d;
+	background-color: rgba(0,0,0,.075):;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+/* Button Next */
 footer a .btn-login {
 	width: 100%;
 	padding: 10px; 

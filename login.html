@@ -18,10 +18,11 @@
 <body class="hero">
 	<div class="container">
 		<div id="app-content">
+<!--******************************************************Header******************************************************-->
 			<header>
 				<div class="row">
 					<div class="col-md-1 col-sm-1 col-xs-1">
-						<a href="index.html"><i class="fa fa-angle-left fa-3x" style="margin-top: 18px" aria-hidden="true"></i></a>
+						<i class="fa fa-angle-left fa-3x" id="btnGoBack" style="margin-top: 18px" aria-hidden="true"></i>
 					</div>
 			        <div class="col-md-9 col-sm-9 col-xs-9 text-center title">
 				        <h1>Sign up</h1>
@@ -30,28 +31,30 @@
 	        		<hr>
   				</div>
 			</header>
+<!--******************************************************UserName & Email******************************************************-->			
 			<section>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
-						    <form name="myForm" action="/app.html" onsubmit="return validateForm()" method="post">
-						        <div class="form-group">
-                                    <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
-                                            <input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name" onkeyup="validateName()">
-                                           
-                                            <span class="input-group-addon spanLastName"></span>
-                                            <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name" onkeyup="validateLastName()">
-                                    </div>
-                                    <br>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                                        <input id="commentEmail" name="lastname" type="text" class="form-control" required placeholder="Email" onkeyup="validateEmail()">
-                                    </div>
-						        </div>
-						      <span id="commentPrompt" style="font-size: 25px"></span>
-						    </form>
-							
+					        <div class="form-group">
+                                <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                                        <input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name">
+
+                                        <span class="input-group-addon spanLastName"></span>
+                                        <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name">
+                                </div>
+                                <span class="help-block" id="commentNamePrompt" style="display: inline"></span>
+                                <span class="help-block" id="commentLastNamePrompt" style="white-space:pre; display: inline"></span>
+                                <br>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                                    <input id="commentEmail" name="email" type="text" class="form-control" required placeholder="Email">
+                                </div>
+                                <span class="help-block" id="commentEmailPrompt"></span>
+					        </div>
+					      	<div id="commentPrompt" class="alert" style="font-size: 25px">
+					      	</div>
 					 	</div>
 					</div>
 				</div>
@@ -61,7 +64,7 @@
 					<div class="row ">
 						<div class="col-md-10 col-xs-offset-1 text-center">
                             <div class="checkbox">
-                                <input type="checkbox" name="" id="commentInfo" onkeyup="validateInfo()"> I agree to Lyft's <span style="color:#40A9DD"> Terms of Service</span>
+                                <input type="checkbox" name="checkbox" id="commentInfo"> I agree to Lyft's <span style="color:#40A9DD"> Terms of Service</span>
                             </div>
 						</div>
 					</div>
@@ -72,7 +75,7 @@
 				<div class="container">
 					<div class="row">
 				        <div class="col-md-12 text-center">
-							<a href="app.html" id="sendForm"><button type="button" onclick="validateForm()" class="btn-login">Next</button></a>
+							<a href="app.html" id="sendForm"><button type="button" class="btn-login" id="btnValidation">Next</button></a>
 						</div>
 					</div>
 				</div>
@@ -80,7 +83,7 @@
 		</div>
 	</div>
     <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
-	<script src="js/login.js"></script>
+	<script type='text/javascript' src="js/login.js"></script>
 	
 </body>
 </html>

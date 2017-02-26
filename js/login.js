@@ -34,13 +34,7 @@ function init()
 	$('#commentLastName').on('keyup', validateLastName);
 	$('#commentEmail').on('keyup', validateEmail);
 	$('#commentInfo').on('keyup', validateInfo);
-	$('#btnValidation').on('click', function(){
-		if(validateForm()==false)
-			alert("Los campos no estan validados");
-		else{
-			alert("los campos estan validados");
-		}
-	});
+	$('#btnValidation').on('click', validateForm);
 	$('#btnGoBack').on('click', goBack);
 }
 
@@ -60,18 +54,18 @@ function validateForm()
   	var inputEmail=$('#commentEmail').val();
   	localStorage.setItem('Email', inputEmail);
 
-    if (!validateName() || !validateLastName() || !validateEmail() || !validateInfo())
+    if (validateName()==false || validateLastName()==false || validateEmail()==false || validateInfo()==false)
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
 		setTimeout(function(){jsHide("commentPrompt");}, 2000);
-		return false;
+		
 	}	
 	else
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario Validado Exitósamente", "commentPrompt", "green");
-		return true;
+		
 	}
 }
 

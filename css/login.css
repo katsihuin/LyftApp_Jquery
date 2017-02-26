@@ -27,14 +27,14 @@ section {
 }
 
 /* Invalid input boxes */
-input.invalid {
+input-group.invalid {
 	border-color: #a94442;
 	background-color: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);  
 }
 
-input.valid {
+input-group.valid {
 	border-color: #3c763d;
 	background-color: rgba(0,0,0,.075):;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -42,7 +42,7 @@ input.valid {
 }
 
 /* Button Next */
-footer a .btn-login {
+footer .btn-login {
 	width: 100%;
 	padding: 10px; 
 	border:none;

@@ -65,11 +65,13 @@ function validateForm()
 		jsShow("commentPrompt");
 		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
 		setTimeout(function(){jsHide("commentPrompt");}, 2000);
+		return false;
 	}	
 	else
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario Validado Exitósamente", "commentPrompt", "green");
+		return true;
 	}
 }
 

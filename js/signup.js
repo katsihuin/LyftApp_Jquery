@@ -1,13 +1,14 @@
-function initSignUp() {
+$(document).ready(init);
+function init() {
 
     var flag = $('flag');
     var dialCode = $('dialCode');
     
-    var getFlag = localStorage.getItem('country',flag);
-	var getDialCode = localStorage.getItem('dialCode',dialCode);
+    var getFlag = localStorage.getItem('country');
+	var getDialCode = localStorage.getItem('dialCode');
     
-    flag.src = getFlag;
-    dialCode.textContent = getDialCode;
+    $('#flag').text(getFlag);
+    $('#dialCode').text(getDialCode);
     
 }
 

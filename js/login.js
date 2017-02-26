@@ -149,10 +149,12 @@ function validateEmail()
 	var email = inputEmail.val;
 	var emailReg = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
 
-	if (email == null || email.length == 0 || /^\^s+$/.test(email))
+	if (email == null || email.length == 0 || /^\s+$/.test(email))
 	{
 		producePrompt("Correo Electrónico es requerido", "commentEmailPrompt", "red");
-		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback");
+		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback")
+		$('#input-email-group').append("<span id='glypcn"+"' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+
 		return false;
 	}
 	else if (!emailReg.test(email)) 

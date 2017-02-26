@@ -26,6 +26,8 @@ section {
 	border-left: none;
 }
 
+.input-group
+
 /* Invalid input boxes */
 input.invalid {
 	border-color: #a94442;

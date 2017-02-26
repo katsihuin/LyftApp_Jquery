@@ -1,36 +1,9 @@
-/*$(document).ready(function() {
-	//jQuery va aqui
-    $('#commentName').on('input', function() {
-        var inputName=$(this);
-        var name=inputName.val();
-        if(name){inputName.removeClass("invalid").addClass("valid");}
-        else{inputName.removeClass("valid").addClass("invalid");}
-    });
-     $('#commentLastName').on('input', function() {
-        var inputLastName=$(this);
-        var lastName=inputLastName.val();
-        if(lastName){inputLastName.removeClass("invalid").addClass("valid");}
-        else{inputLastName.removeClass("valid").addClass("invalid");}
-    });
-    $('#commentEmail').on('input', function() {
-        var email =$(this);
-        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        var is_email = re.test(input.val());
-        if (is_email)
-        {
-            input.removeClass("invalid").addClass("valid")
-        }else{
-            input.removeClass("valid").addClass("invalid")
-        }
-    });
-});
-*/
-
 $(document).ready(init);
 
 function init()
 {
-	$('#commentName').keyup(validateName);
+	//$('span.help-block').hide();
+	$('#commentName').on('keyup', validateName);
 	$('#commentLastName').on('keyup', validateLastName);
 	$('#commentEmail').on('keyup', validateEmail);
 	$('#commentInfo').on('keyup', validateInfo);
@@ -45,7 +18,8 @@ function goBack()
 
 function validateForm()
 {
-    var inputName=$('#commentName').val();
+    
+	var inputName=$('#commentName').val();
     localStorage.setItem('Name', inputName);
 
   	var inputLastName=$('#commentLastName').val();
@@ -53,6 +27,8 @@ function validateForm()
 
   	var inputEmail=$('#commentEmail').val();
   	localStorage.setItem('Email', inputEmail);
+
+  	validateName(), validateLastName(), validateEmail();
 
     if (validateName()==false || validateLastName()==false || validateEmail()==false || validateInfo()==false)
 	{
@@ -70,9 +46,9 @@ function validateForm()
 }
 
 /* Muestra mensaje validación*/
-function jsShow(id)
+function jsShow()
 {
-	document.getElementById(id).style.display="block";
+	$('#commentPrompt').removeClass("alert").addClass("alert alert-warning");
 }
 
 /* Oculta mensaje validación*/
@@ -113,22 +89,22 @@ function validateName()
 	inputName.val = firstToUpperCase(name);
 	var nameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 	
-	if (name == null || name.length == 0 || /^\^s+$/.test(name))
+	if (name == null || name.length == 0 || /^\^s+$/g.test(name))
 	{
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
-		inputName.removeClass("valid").addClass("invalid");
+		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
 	else if (!nameReg.test(name)) 
 	{
 		producePrompt("Compruebe que su Nombre contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
-		inputName.removeClass("valid").addClass("invalid");
+		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
 	else 
 	{
-		producePrompt("Bienvenido(a) " + name, "commentNamePrompt", "green")
-		inputName.removeClass("invalid").addClass("valid");
+		producePrompt("Nombre Válido ✔", "commentNamePrompt", "green")
+		$('#input-name-group').removeClass("input-group").addClass("input-group has-success has-feedback");
 		return true;
 	}	
 
@@ -148,7 +124,8 @@ function validateLastName()
 	if (lastName == null || lastName.length == 0 || /^\^s+$/.test(lastName))
 	{
 		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
-		inputLastName.removeClass("valid").addClass("invalid");
+		$('#commentLastName').removeClass("valid").addClass("invalid");
+		//inputLastName.removeClass("valid").addClass("invalid");
 		return false;
 	}
 	else if (!lastNameReg.test(lastName)) 
@@ -175,19 +152,19 @@ function validateEmail()
 	if (email == null || email.length == 0 || /^\^s+$/.test(email))
 	{
 		producePrompt("Correo Electrónico es requerido", "commentEmailPrompt", "red");
-		inputEmail.removeClass("valid").addClass("invalid");
+		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
 	else if (!emailReg.test(email)) 
 	{
 		producePrompt("Compruebe que el Correo Electrónico contenga un formato válido. Ej: name@domain.com", "commentEmailPrompt", "red");
-		inputEmail.removeClass("valid").addClass("invalid");
+		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
 	else 
 	{
 		producePrompt("Correo Electrónico Válido ✔", "commentEmailPrompt", "green");
-		inputEmail.removeClass("invalid").addClass("valid");
+		$('#input-email-group').removeClass("input-group").addClass("input-group has-success has-feedback");
 		return true;
 	}
 }
@@ -196,9 +173,13 @@ function validateEmail()
 function validateInfo()
 {
 	var info = $('#commentInfo');
-	if (info.checked=true) 
+	if (info.prop('checked')) 
 	{
 		producePrompt("¡Gracias por aceptar los Terminos de Usuario!", "commentInfoPrompt", "green");
 		return true;
+	}
+	else
+	{
+		return false;
 	}
 }

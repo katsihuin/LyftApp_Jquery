@@ -1,4 +1,5 @@
 $(document).ready(init);
+$('span'.helpblock)
 
 function init()
 {
@@ -28,13 +29,13 @@ function validateForm()
   	var inputEmail=$('#commentEmail').val();
   	localStorage.setItem('Email', inputEmail);
 
-  	validateName(), validateLastName(), validateEmail();
+  	validateName(); validateLastName(); validateEmail();
 
-    if (validateName()==false || validateLastName()==false || validateEmail()==false || validateInfo()==false)
+    if (validateName()===false || validateLastName()===false || validateEmail()===false || validateInfo()===false)
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
-		setTimeout(function(){jsHide("commentPrompt");}, 2000);
+		setTimeout(function(){jsHide("commentPrompt");}, 5000);
 		
 	}	
 	else
@@ -48,7 +49,7 @@ function validateForm()
 /* Muestra mensaje validación*/
 function jsShow()
 {
-	$('#commentPrompt').removeClass("alert").addClass("alert alert-warning");
+	$('#commentPrompt').removeClass("alert").addClass("alert alert-warning text-center");
 }
 
 /* Oculta mensaje validación*/
@@ -64,30 +65,17 @@ function producePrompt(message, promptLocation, color)
 	document.getElementById(promptLocation).style.color = color;
 }
 
-function firstToUpperCase()
-{
-	$(this[0]).keyup(function(event) {
-        var box = event.target;
-        var txt = $(this).val();
-        var stringStart = box.selectionStart;
-        var stringEnd = box.selectionEnd;
-        $(this).val(txt.replace(/^(.)|(\s|\-)(.)/g, function($word) {
-            return $word.toUpperCase();
-        }));
-        box.setSelectionRange(stringStart , stringEnd);
-    });
 
-   return this;
-}
+
 
 /* Valida Nombre*/
-function validateName()
+function validateName(campo)
 {
 	var inputName = $('#commentName');
 	var name =  inputName.val;
 
-	inputName.val = firstToUpperCase(name);
-	var nameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
+	
+	
 	
 	if (name == null || name.length == 0 || /^\^s+$/g.test(name))
 	{
@@ -95,7 +83,7 @@ function validateName()
 		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
-	else if (!nameReg.test(name)) 
+	else if (!/^[A-Z][a-z]*[a-zA-Z]$/.test(name)) 
 	{
 		producePrompt("Compruebe que su Nombre contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
@@ -117,8 +105,7 @@ function validateLastName()
 	var inputLastName = $('#commentLastName');
 	var lastName =  inputLastName.val;
 
-	inputLastName.val = firstToUpperCase(lastName);
-
+	
 	var lastNameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 
 	if (lastName == null || lastName.length == 0 || /^\^s+$/.test(lastName))

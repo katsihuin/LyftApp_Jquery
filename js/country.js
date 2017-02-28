@@ -10,10 +10,11 @@ function init()
 	$.each(eachCountry, function() 
 	{
 	  	
-	  	var html='<a href="signup.html"><li select=""><div class="flag"'+this.code.toLowerCase()+'"'+' style="padding-right:10px;">'+'</div>'+'<span class="dial_code"'+ 
-	  		' style="display:none;">'+this.dial_code+'</span>'+ this.name+'</li></a>';
+	  	var listHTML='<a href="signup.html"><li select=""><div class="flag '+this.code.toLowerCase()+'"'+
+			  		' style="padding-right:10px;">'+'</div>'+'<span class="dial_code"'+ 
+			  		' style="display:none;">'+this.dial_code+'</span>'+ this.name+'</li></a>';
 
-	  		countryContainer.append(html);
+	  		countryContainer.append(listHTML);
 	});
 	addedEventClick();
 };
@@ -27,7 +28,7 @@ function addedEventClick()
 	
 function getCountry(e)
 {
-	var countryFlag=$(e.currentTarget).find('.flag').text();
+	var countryFlag=$(e.currentTarget).find('div').attr('class');
 	localStorage.setItem('country',countryFlag);
 	
 	var countryDialCode=$(e.currentTarget).find('.dial_code').text();

@@ -1,5 +1,12 @@
   
-    .f32 .flag{display:inline-block;height:32px;width:80px;vertical-align:middle;line-height:32px;background:url(../img/flags32.png) no-repeat;}
+  .f32 .flag{
+    display:inline-block;
+    height:32px;
+    width:40px;
+    vertical-align:middle;
+    line-height:32px;
+    background:url(../img/flags32.png) no-repeat;
+  }
   .f32 ._African_Union(OAS){background-position:0 -0px;}
   .f32 ._Arab_League{background-position:0 -32px;}
   .f32 ._ASEAN{background-position:0 -64px;}

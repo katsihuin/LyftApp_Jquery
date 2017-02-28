@@ -1,13 +1,10 @@
 $(document).ready(init);
 function init() {
-
-    var flag = $('flag');
-    var dialCode = $('dialCode');
-    
+    //Retreive your key on the local storage
     var getFlag = localStorage.getItem('country');
 	var getDialCode = localStorage.getItem('dialCode');
-    
-    $('#flag').text(getFlag);
+
+    $('#flag').removeClass().addClass(getFlag);
     $('#dialCode').text(getDialCode);
     
 }

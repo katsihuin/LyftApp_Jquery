@@ -19,7 +19,6 @@ function goBack()
 
 function validateForm()
 {
-    
 	var inputName=$('#commentName').val();
     localStorage.setItem('Name', inputName);
 
@@ -31,7 +30,7 @@ function validateForm()
 
   	validateName(); validateLastName(); validateEmail();
 
-    if (validateName()===false || validateLastName()===false || validateEmail()===false || validateInfo()===false)
+    if (validateName()==false || validateLastName()==false || validateEmail()==false || validateInfo()==false)
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
@@ -53,29 +52,24 @@ function jsShow()
 }
 
 /* Oculta mensaje validación*/
-function jsHide(id)
+function jsHide()
 {
-	document.getElementById(id).style.display="none";
+	$('#commentPrompt').hide();
 }
 
 /* Envia Mensaje al usuario*/
 function producePrompt(message, promptLocation, color)
 {
-	document.getElementById(promptLocation).innerHTML = message;
-	document.getElementById(promptLocation).style.color = color;
+    $('#' + promptLocation).html(message) ;
+	$('#' + promptLocation).css({"color":"color"});
 }
-
-
-
 
 /* Valida Nombre*/
 function validateName(campo)
 {
-	var inputName = $('#commentName');
-	var name =  inputName.val;
-
-	
-	
+    var inputName = $('#commentName');
+	var name =  inputName.val();
+	var nameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 	
 	if (name == null || name.length == 0 || /^\^s+$/g.test(name))
 	{
@@ -83,7 +77,7 @@ function validateName(campo)
 		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
 		return false;
 	}
-	else if (!/^[A-Z][a-z]*[a-zA-Z]$/.test(name)) 
+	else if (!nameReg.test(name)) 
 	{
 		producePrompt("Compruebe que su Nombre contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
@@ -103,21 +97,19 @@ function validateName(campo)
 function validateLastName()
 {
 	var inputLastName = $('#commentLastName');
-	var lastName =  inputLastName.val;
-
-	
+	var lastName =  inputLastName.val();
 	var lastNameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 
 	if (lastName == null || lastName.length == 0 || /^\^s+$/.test(lastName))
 	{
-		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
+		producePrompt("Tu Apellido es requerido", "commentNamePrompt", "red");
 		$('#commentLastName').removeClass("valid").addClass("invalid");
 		//inputLastName.removeClass("valid").addClass("invalid");
 		return false;
 	}
 	else if (!lastNameReg.test(lastName)) 
 	{
-		producePrompt("Compruebe que su Apellido contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
+		producePrompt("Compruebe que su Apellido contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		inputLastName.removeClass("valid").addClass("invalid");
 		return false;
 	}
@@ -133,7 +125,7 @@ function validateLastName()
 function validateEmail()
 {
 	var inputEmail = $('#commentEmail');
-	var email = inputEmail.val;
+	var email = inputEmail.val();
 	var emailReg = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
 
 	if (email == null || email.length == 0 || /^\s+$/.test(email))

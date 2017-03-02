@@ -82,7 +82,10 @@ footer {
       position: relative;
     }
 
-    #menu a { display: block;}
+    #menu a { 
+        display: block;
+        text-decoration: none;
+    }
 
     #menu a:hover {
       background: #fff;
@@ -92,7 +95,7 @@ footer {
     #menu ul li ul {
       position: absolute;
       height: 0px;
-      width: 250%;
+      width: 800%;
       overflow: hidden;
     }
 

@@ -1,5 +1,14 @@
+$(document).ready(init);
+
 function init() {
   getMyLocation();
+    
+}
+
+function onClickButton(){
+    $('button').click(function(){
+        $('.menu').toggle();
+    });
 }
 
 var map;
@@ -118,17 +127,6 @@ function addInfoWindow(marker, latLng, content) {
   });
 }
 
-
-var directionsService;
-var directionsDisplay;
-var geoCoding;
-var waypts = [];
-var infoWindows = [];
-var start;
-var stop;
-var map;
-var progress = "true";
-var status = "false"; 
 
 
 /*function displayTravelledRouteOnMap(){

@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/alertify.min.css" />
-	<link rel="stylesheet" href="css/default.min.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/login.css">
 
@@ -36,32 +34,38 @@
 				<div class="container">
 					<div class="row">
 						
-					        <div class="form-group">
+					        <div class="">
 					       		<!-- Nombre y apellido input -->	
-                            	<div class="input-group col-md-12">
-	                            	<div class="input-group" id="input-name-group">
+                            	<div class="form-group col-md-12" id="input-name-group">
+	                            	<div class="input-group">
 	                            		<span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
 	                                    <input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name">
+	                            	
+		                            	<span class="input-group-addon spanLastName"></span>
+	                                    <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name">
 	                            	</div>
-                                	<span class="input-group-addon spanLastName"></span>
-                                    <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name">
                                 </div>
                                 <!-- Mensajes para nombre y apellido input--> 
-                                <span class="help-block" id="commentNamePrompt" style="display: inline"></span>
+                                <span class="help-block" id="commentNamePrompt" style="display: inline; padding-right:30px;"></span>
                                 <span class="help-block" id="commentLastNamePrompt" style="display: inline"></span>
                                 <br>
                                 <!-- Email input -->
-                                <div class="input-group col-md-12" id="input-email-group">
-                                    <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                                    <input id="commentEmail" name="email" type="text" class="form-control" required placeholder="Email">
+                                <div class="form-group col-md-12" id="input-email-group">
+                                	<div class="input-group">
+	                                    <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+	                                    </div>
+	                                    <input id="commentEmail" name="email" type="text" class="form-control" required placeholder="Email">
+                                	</div>
                                 </div>
+                                
                                 <!-- Mensajes para email input--> 
                                 <span class="help-block" id="commentEmailPrompt"></span>
 					        </div>
 					       <!-- Mensaje de boton Next -->
-					      	<div id="commentPrompt" class="alert" style="font-size: 25px">
-					      	</div>
-					 	
+					        <div class="form-group">
+					        	<div id="commentPrompt" class="alert">
+					      		</div>
+					        </div>
 					</div>
 				</div>
 			</section>

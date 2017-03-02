@@ -3,7 +3,6 @@ $('span'.helpblock)
 
 function init()
 {
-	//$('span.help-block').hide();
 	$('#commentName').on('keyup', validateName);
 	$('#commentLastName').on('keyup', validateLastName);
 	$('#commentEmail').on('keyup', validateEmail);
@@ -34,27 +33,33 @@ function validateForm()
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
-		setTimeout(function(){jsHide("commentPrompt");}, 5000);
+		$('#commentPrompt').attr("class", "alert alert-danger text-center");
+		$('#commentPrompt').append("<button class='close btn btn-primary text-center' data-dismiss='alert' aria-label='Close'>"+"<span>&times</span></button>");
+		setTimeout(function(){jsHide("commentPrompt");}, 3000);
 		
 	}	
 	else
 	{
 		jsShow("commentPrompt");
 		producePrompt("Formulario Validado Exitósamente", "commentPrompt", "green");
+		$('#commentPrompt').attr("class", "alert alert-success text-center");
+		$('#commentPrompt').append("<button class='close btn btn-primary text-center' data-dismiss='alert' aria-label='Close'>"+"<span>&times</span></button>");
+		setTimeout(function(){jsHide("commentPrompt");}, 3000);
 		
+		window.location="app.html";
 	}
 }
 
 /* Muestra mensaje validación*/
-function jsShow()
+function jsShow(id)
 {
-	$('#commentPrompt').removeClass("alert").addClass("alert alert-warning text-center");
+	$('#' + id).show();
 }
 
 /* Oculta mensaje validación*/
-function jsHide()
+function jsHide(id)
 {
-	$('#commentPrompt').hide();
+	$('#' + id).hide();
 }
 
 /* Envia Mensaje al usuario*/
@@ -65,7 +70,7 @@ function producePrompt(message, promptLocation, color)
 }
 
 /* Valida Nombre*/
-function validateName(campo)
+function validateName()
 {
     var inputName = $('#commentName');
 	var name =  inputName.val();
@@ -74,19 +79,25 @@ function validateName(campo)
 	if (name == null || name.length == 0 || /^\^s+$/g.test(name))
 	{
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
-		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-error has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 		return false;
 	}
 	else if (!nameReg.test(name)) 
 	{
 		producePrompt("Compruebe que su Nombre contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
-		$('#input-name-group').removeClass("input-group").addClass("input-group has-error has-feedback");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-error has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 		return false;
 	}
 	else 
 	{
 		producePrompt("Nombre Válido ✔", "commentNamePrompt", "green")
-		$('#input-name-group').removeClass("input-group").addClass("input-group has-success has-feedback");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-success has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-check form-control-feedback'></i>");
 		return true;
 	}	
 
@@ -102,21 +113,26 @@ function validateLastName()
 
 	if (lastName == null || lastName.length == 0 || /^\^s+$/.test(lastName))
 	{
-		producePrompt("Tu Apellido es requerido", "commentNamePrompt", "red");
-		$('#commentLastName').removeClass("valid").addClass("invalid");
-		//inputLastName.removeClass("valid").addClass("invalid");
+		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-error has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 		return false;
 	}
 	else if (!lastNameReg.test(lastName)) 
 	{
-		producePrompt("Compruebe que su Apellido contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
-		inputLastName.removeClass("valid").addClass("invalid");
+		producePrompt("Compruebe que su Apellido contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-error has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 		return false;
 	}
 	else 
 	{
 		producePrompt("Apellido Válido ✔", "commentLastNamePrompt", "green");
-		inputName.removeClass("invalid").addClass("valid");
+		$('#glypcn').remove();
+		$('#input-name-group').attr("class", "form-group has-success has-feedback");
+		$('#input-name-group').append("<i id='glypcn' class='fa fa-check form-control-feedback'></i>");
 		return true;
 	}	
 }
@@ -131,21 +147,26 @@ function validateEmail()
 	if (email == null || email.length == 0 || /^\s+$/.test(email))
 	{
 		producePrompt("Correo Electrónico es requerido", "commentEmailPrompt", "red");
-		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback")
-		$('#input-email-group').append("<span id='glypcn"+"' class='glyphicon glyphicon-remove form-control-feedback'></span>");
+		$('#glypcn').remove();
+		$('#input-email-group').attr("class", "form-group has-error has-feedback");
+		$('#input-email-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 
 		return false;
 	}
 	else if (!emailReg.test(email)) 
 	{
 		producePrompt("Compruebe que el Correo Electrónico contenga un formato válido. Ej: name@domain.com", "commentEmailPrompt", "red");
-		$('#input-email-group').removeClass("input-group").addClass("input-group has-error has-feedback");
+		$('#glypcn').remove();
+		$('#input-email-group').attr("class", "form-group has-error has-feedback");
+		$('#input-email-group').append("<i id='glypcn' class='fa fa-times form-control-feedback'></i>");
 		return false;
 	}
 	else 
 	{
 		producePrompt("Correo Electrónico Válido ✔", "commentEmailPrompt", "green");
-		$('#input-email-group').removeClass("input-group").addClass("input-group has-success has-feedback");
+		$('#glypcn').remove();
+		$('#input-email-group').attr("class", "form-group has-success has-feedback");
+		$('#input-email-group').append("<i id='glypcn' class='fa fa-check form-control-feedback'></i>");
 		return true;
 	}
 }

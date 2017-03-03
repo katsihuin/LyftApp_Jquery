@@ -15,96 +15,92 @@
 	<link rel="stylesheet" href="css/pickup.css">
 </head>
 <body onload ="init()">
-	<div class="container">
+	<div class="fluid-container">
 		<div id="app-content">
 			<div id="location">
 					
 			</div>
-			<div id="map" style="height:500px">
+			<div id="map" style="height:800px">
 				<!--contenedor del mapa-->
 			</div>
 		</div>
 	</div>
-    <section class="list-cars">
-       <div class="container">
-          <div class="row">
-                   <div class="col-md-12" id="menu">
-                      <ul>
-                        <li>
-                            <a href="#">
-                              <button type="button"><i class="fa fa-angle-down"></i></button>
-                            </a>
-                           <ul class="menu">
-                              <li class="row">
-                                  <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <img src="img/taxi1.png" alt="">
-                                      </div>
-                                      <div class="col-md-8 col-sm-8 col-xs-8">
-                                          <a href="#">Line</a>
-                                      </div>
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <span>3<br>min</span>
-                                      </div>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="col-sm-12">
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <img src="img/taxi2.png" alt="">
-                                      </div>
-                                      <div class="col-md-8 col-sm-8 col-xs-8">
-                                          <a href="#">Lyft</a>
-                                      </div>
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <span>3<br>min</span>
-                                      </div>
-                                  </div>
-                            </li>
-                              <li>
-                                  <div class="col-sm-12">
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <img src="img/taxi3.png" alt="">
-                                      </div>
-                                      <div class="col-md-8 col-sm-8 col-xs-8">
-                                          <a href="#">Plus</a>
-                                      </div>
-                                      <div class="col-md-2 col-sm-2 col-xs-2">
-                                          <span>3<br>min</span>
-                                      </div>
-                                  </div>
-                               </li>
-                               <li>
-                                   <div class="col-md-12 col-sm-12 col-xs-12">
-                                          <div class="col-md-2 col-sm-2 col-xs-2">
-                                              <img src="img/taxi4.png" alt="">
-                                          </div>
-                                          <div class="col-md-8 col-sm-8 col-xs-8">
-                                              <a href="#">Premier</a>
-                                          </div>
-                                          <div class="col-md-2 col-sm-2 col-xs-2">
-                                              <span>3<br>min</span>
-                                          </div>
-                                      </div>
-                               </li>
-                           </ul>
-                        </li>
-                     </ul>
-                    </div>
-            </div>
-       </div>
-    </section>
+  
+
 	<footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                   <a href="#"><button type="button" class="btn-login" id="btnValidation" >Set Pickup</button></a>  
+    <div class="container">
+      <div class="row">
+        <div class="dropup container">
+          <button class="btn btn-group btn-default dropdown-toggle col-sm-12 col-xs-12" type="button" id="dropdownMenu2 address-group " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="fa-stack btn-circle" title="Toggle dropdown menu">
+              <i class="fa fa-circle-thin fa-stack-2x"><i class="fa fa-angle-down fa-stack-1x"></i></i>
+            </span>
+            <span class="address">
+              <span>2300 Harrison St</span><br>
+              <small>Pickup Location</small>
+            </span>
+          </button>
+          <ul class="dropdown-menu list-car" aria-labelledby="dropdownMenu2">
+            <li>
+              <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                  <div class="col-sm-3 col-xs-3">
+                        <img src="img/taxi1.png" alt="">
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                      <a href="#">Line</a><br><small>Shared, 2 riders max</small>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                      <span>3<br>min</span>
+                  </div>
                 </div>
-            </div>
+                <div class="col-sm-12 col-xs-12">  
+                  <div class="col-sm-3 col-xs-3">
+                      <img src="img/taxi2.png" alt="">
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                      <a href="#">Lyft</a><br><small>4 seats</small>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                      <span>3<br>min</span>
+                  </div>
+                </div >
+                <div class="col-sm-12 col-xs-12">
+                  <div class="col-sm-3 col-xs-3">
+                      <img src="img/taxi3.png" alt="">
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                      <a href="#">Plus</a><br><small>6 seats</small>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                      <span>3<br>min</span>
+                  </div>
+                </div>  
+                <div class="col-sm-12 col-xs-12">
+                  <div class="col-sm-3 col-xs-3">
+                  <img src="img/taxi4.png" alt="">
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                    <a href="#">Premier</a><br><small>High-end, 4 seats</small>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                    <span>3<br>min</span>
+                  </div>
+                </div>  
+              </div>  
+            </li>
+          </ul>
         </div>
-    </footer>
-    <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
-	<script src="js/pickup.js"></script>
+      <!--Button Next-->    
+      <div class="col-md-12 text-center">
+         <a href="#"><button type="button" class="btn-login" id="btnValidation" >Set Pickup</button></a>  
+      </div>
+    </div>
+  </div>
+</footer>
+  <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
+	<script type='text/javascript' src="js/pickup.js"></script>
+  <script type='text/javascript' src='js/bootstrap.min.js'></script>
 	<script async defer
 	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&callback=initMap">
 	</script>

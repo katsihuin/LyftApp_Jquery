@@ -26,22 +26,6 @@ section {
 	border-left: none;
 }
 
-.input-group
-
-/* Invalid input boxes */
-input.invalid {
-	border-color: #a94442;
-	background-color: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);  
-}
-
-input.valid {
-	border-color: #3c763d;
-	background-color: rgba(0,0,0,.075):;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
 
 /* Button Next */
 footer .btn-login {
@@ -59,6 +43,7 @@ section a {
 }
 
 footer {
+
 	position: absolute;
 	bottom:0px;
     right:0px;
@@ -66,52 +51,24 @@ footer {
 	margin-bottom: 10px;
 }
 
- #menu {
-      margin-top: 100px;
-    }
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}
 
-    #menu ul {
-      padding: 0px;
-      margin: 0px;
-      list-style: none;
-    }
-
-    #menu > ul > li {
-      float: left;
-      margin: 10px;
-      position: relative;
-    }
-
-    #menu a { 
-        display: block;
-        text-decoration: none;
-    }
-
-    #menu a:hover {
-      background: #fff;
-      color: #333;
-    }
-
-    #menu ul li ul {
-      position: absolute;
-      height: 0px;
-      width: 800%;
-      overflow: hidden;
-    }
-
-    #menu ul li:hover ul {
-      height: initial;
-      bottom: 100%;
-      overflow: visible;
-      background: lightgray;
-    }
-
-    #menu li li a {
-      padding: 5px 10px;
-    }
-
-    #menu a {
-      -webkit-transition: 0.3s;
-      -moz-transition: 0.3s;
-      padding: 0px 10px;
-    }
+.address {
+  display: inline-block;
+  padding-left: 20px;
+}
+#address-group {
+  width: 100%;
+}
+.list-car {
+  width: 85%;
+  margin: 15px;
+}

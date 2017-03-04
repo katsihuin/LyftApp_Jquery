@@ -43,11 +43,10 @@ section a {
 }
 
 footer {
-
 	position: absolute;
 	bottom:0px;
-    right:0px;
-    left: 0px;
+  right:0px;
+  left: 0px;
 	margin-bottom: 10px;
 }
 
@@ -71,4 +70,38 @@ footer {
 .list-car {
   width: 85%;
   margin: 15px;
+}
+/* circulos estilo lista */
+.purple-circle, .pink-circle {
+  height: 7px;
+  width: 7px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.purple-circle {
+  background-color: #3D0884;
+}
+
+.pink-circle {
+  background-color: #FC1EBF;
+}
+
+small {
+  color: #B8B7BD;
+}
+
+/* botones para regresar y navegar */
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  color: #474C62;
 }

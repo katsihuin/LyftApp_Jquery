@@ -2,14 +2,25 @@ $(document).ready(init);
 
 function init() {
   getMyLocation();
-    
+  displaySetPickUp();
+  displayRequestLyft();
 }
 
-function onClickButton(){
-    $('button').click(function(){
-        $('.menu').toggle();
+function displaySetPickUp (){
+  $('#requestLyft').hide();
+  $('#setPickUp').show();
+}
+
+function displayRequestLyft(){
+    $("#btnPickUp").click(function(){
+        $("setPickUp").hide();
+    });
+    $("#btnPickUp").click(function(){
+        $("requestLyft").show();
     });
 }
+
+
 
 var map;
 

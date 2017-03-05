@@ -39,8 +39,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-xs-12">
-          <!--Inicio de sección con la lista de carros con el botón de Set Pickup-->
-          <div class="address-group">
+          <!--Sección con la lista de carros con el botón de Set PickUp-->
+          <div id="setPickUp">
             <div class="dropup">
               <button class="btn btn-group btn-default dropdown-toggle btn-circle" type="button" id="dropdownMenu2 address-group " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-angle-down fa-stack-4x"></i>
@@ -100,71 +100,71 @@
                 </li>
               </ul>
             </div>
+            <!--Button Set Pickup-->    
+            <div class="text-center">
+               <a href="#"><button type="button" class="btn-login" id="btnValidation btnPickUp" >Set Pickup</button></a>  
+            </div>
           </div>
           
-          <!--Button Set Pickup-->    
-          <div class="text-center">
-             <a href="#"><button type="button" class="btn-login" id="btnValidation" >Set Pickup</button></a>  
-          </div>
-
-          <!-- Botón regreso en página Request Lyft -->
-          <div class="btn btn-default btn-circle" id="btn-goBack">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </div>
-          <!-- Botón navegación en página Request Lyft -->
-          <div class="btn btn-default btn-circle pull-right" id="btn-navigation">
-            <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          </div>
-          <!--Sección de la lista de carros con el botón de Request Lyft-->
-          <div class="panel panel-default">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td class="active text-center">
-                    <img src="img/lyftcar.png" class="pull-right">
-                    
-                  </td>
-                  <td class="active">
-                    <span>Lyft <br><small>Fast ride, 4 seats</small></span>
-                  </td>  
-                </tr>
-                <tr>
-                  <td class="active">
-                    <div class="text-center">
-                      <img src="img/mastercard.png">
-                      <span>Personal</span><br> 
-                      <small class="text-center">Payment</small>
-                    </div>
-                  </td>
-                  <td class="active">
-                    <div class="text-center">
-                      <span>$6-12</span><br> 
-                      <small class="text-center">Price Estimate</small>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="purple-circle">
-                    </div>
-                    <span style="padding-left: 10px;">2300 Harrison St</span>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="pink-circle">
-                    </div>
-                    <span style="padding-left: 10px;">Caltrain Station</span>
-                  </td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!--Botón Request Lyft-->    
-          <div class="text-center">
-             <a href="#"><button type="button" class="btn-login" id="btnValidation" >Request Lyft</button></a>  
+          <div id="requestLyft" >
+            <!-- Botón regreso en página Request Lyft -->
+            <div class="btn btn-default btn-circle" id="btn-goBack">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </div>
+            <!-- Botón navegación en página Request Lyft -->
+            <div class="btn btn-default btn-circle pull-right" id="btn-navigation">
+              <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            </div>
+            <!--Sección de la informacion de lyft cars con el botón de Request Lyft-->
+            <div class="panel panel-default">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="active text-center">
+                      <img src="img/lyftcar.png" class="pull-right">
+                    </td>
+                    <td class="active">
+                      <span>Lyft <br><small>Fast ride, 4 seats</small></span>
+                    </td>  
+                  </tr>
+                  <tr>
+                    <td class="active">
+                      <div class="text-center">
+                        <img src="img/mastercard.png">
+                        <span>Personal</span><br> 
+                        <small class="text-center">Payment</small>
+                      </div>
+                    </td>
+                    <td class="active">
+                      <div class="text-center">
+                        <span>$6-12</span><br> 
+                        <small class="text-center">Price Estimate</small>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="purple-circle">
+                      </div>
+                      <span style="padding-left: 10px;">2300 Harrison St</span>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="pink-circle">
+                      </div>
+                      <span style="padding-left: 10px;">Caltrain Station</span>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--Botón Request Lyft-->    
+            <div class="text-center">
+               <a href="#"><button type="button" class="btn-login" id="btnValidation btnRequestLyft" >Request Lyft</button></a>  
+            </div>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@
   </footer>
 
   <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
-	<script type='text/javascript' src="js/pickup.js"></script>
+	<script type='text/javascript' src="js/app.js"></script>
   <script type='text/javascript' src='js/bootstrap.min.js'></script>
 	<script async defer
 	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&callback=initMap">

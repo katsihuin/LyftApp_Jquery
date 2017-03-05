@@ -40,71 +40,72 @@
       <div class="row">
         <div class="col-sm-12 col-xs-12">
           <!--Inicio de sección con la lista de carros con el botón de Set Pickup-->
-          <div class="dropup container">
-            <button class="btn btn-group btn-default dropdown-toggle col-sm-12 col-xs-12" type="button" id="dropdownMenu2 address-group " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="fa-stack btn-circle" title="Toggle dropdown menu">
-                <i class="fa fa-circle-thin fa-stack-2x"><i class="fa fa-angle-down fa-stack-1x"></i></i>
-              </span>
-              <span class="address">
-                <span>2300 Harrison St</span><br>
-                <small>Pickup Location</small>
-              </span>
-            </button>
-            <ul class="dropdown-menu list-car" aria-labelledby="dropdownMenu2">
-              <li>
-                <div class="row">
-                  <div class="col-sm-12 col-xs-12">
-                    <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi1.png" alt="">
+          <div class="address-group">
+            <div class="dropup">
+              <button class="btn btn-group btn-default dropdown-toggle btn-circle" type="button" id="dropdownMenu2 address-group " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-angle-down fa-stack-4x"></i>
+              </button>
+              <div class="pickup-location">
+                  <span>2300 Harrison St</span><br>
+                  <small>Pickup Location</small>
+              </div>
+              <ul class="dropdown-menu list-car" aria-labelledby="dropdownMenu2">
+                <li>
+                  <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                      <div class="col-sm-3 col-xs-3">
+                            <img src="img/taxi1.png" alt="">
+                      </div>
+                      <div class="col-sm-7 col-xs-7">
+                          <a href="#">Line</a><br><small>Shared, 2 riders max</small>
+                      </div>
+                      <div class="col-sm-2 col-xs-2">
+                          <span>3<br>min</span>
+                      </div>
                     </div>
-                    <div class="col-sm-7 col-xs-7">
-                        <a href="#">Line</a><br><small>Shared, 2 riders max</small>
-                    </div>
-                    <div class="col-sm-2 col-xs-2">
+                    <div class="col-sm-12 col-xs-12">  
+                      <div class="col-sm-3 col-xs-3">
+                          <img src="img/taxi2.png" alt="">
+                      </div>
+                      <div class="col-sm-7 col-xs-7">
+                          <a href="#">Lyft</a><br><small>4 seats</small>
+                      </div>
+                      <div class="col-sm-2 col-xs-2">
+                          <span>3<br>min</span>
+                      </div>
+                    </div >
+                    <div class="col-sm-12 col-xs-12">
+                      <div class="col-sm-3 col-xs-3">
+                          <img src="img/taxi3.png" alt="">
+                      </div>
+                      <div class="col-sm-7 col-xs-7">
+                          <a href="#">Plus</a><br><small>6 seats</small>
+                      </div>
+                      <div class="col-sm-2 col-xs-2">
+                          <span>3<br>min</span>
+                      </div>
+                    </div>  
+                    <div class="col-sm-12 col-xs-12">
+                      <div class="col-sm-3 col-xs-3">
+                      <img src="img/taxi4.png" alt="">
+                      </div>
+                      <div class="col-sm-7 col-xs-7">
+                        <a href="#">Premier</a><br><small>High-end, 4 seats</small>
+                      </div>
+                      <div class="col-sm-2 col-xs-2">
                         <span>3<br>min</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-xs-12">  
-                    <div class="col-sm-3 col-xs-3">
-                        <img src="img/taxi2.png" alt="">
-                    </div>
-                    <div class="col-sm-7 col-xs-7">
-                        <a href="#">Lyft</a><br><small>4 seats</small>
-                    </div>
-                    <div class="col-sm-2 col-xs-2">
-                        <span>3<br>min</span>
-                    </div>
-                  </div >
-                  <div class="col-sm-12 col-xs-12">
-                    <div class="col-sm-3 col-xs-3">
-                        <img src="img/taxi3.png" alt="">
-                    </div>
-                    <div class="col-sm-7 col-xs-7">
-                        <a href="#">Plus</a><br><small>6 seats</small>
-                    </div>
-                    <div class="col-sm-2 col-xs-2">
-                        <span>3<br>min</span>
-                    </div>
+                      </div>
+                    </div>  
                   </div>  
-                  <div class="col-sm-12 col-xs-12">
-                    <div class="col-sm-3 col-xs-3">
-                    <img src="img/taxi4.png" alt="">
-                    </div>
-                    <div class="col-sm-7 col-xs-7">
-                      <a href="#">Premier</a><br><small>High-end, 4 seats</small>
-                    </div>
-                    <div class="col-sm-2 col-xs-2">
-                      <span>3<br>min</span>
-                    </div>
-                  </div>  
-                </div>  
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
+          
           <!--Button Set Pickup-->    
-          <div class="col-md-12 text-center" style="display: none;">
+          <div class="text-center">
              <a href="#"><button type="button" class="btn-login" id="btnValidation" >Set Pickup</button></a>  
-          </div> 
+          </div>
 
           <!-- Botón regreso en página Request Lyft -->
           <div class="btn btn-default btn-circle" id="btn-goBack">

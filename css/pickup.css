@@ -50,26 +50,28 @@ footer {
 	margin-bottom: 10px;
 }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.42;
-  border-radius: 15px;
+.dropup {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
 }
 
-.address {
+.dropup .pickup-location {
+  margin-left: 20px;
   display: inline-block;
-  padding-left: 20px;
+  vertical-align: middle;
 }
-#address-group {
-  width: 100%;
-}
-.list-car {
+
+.dropup .list-car {
   width: 85%;
-  margin: 15px;
+  margin-bottom: 15px;
+}
+
+.dropup button {
+  margin-left: 10px;
 }
 /* circulos estilo lista */
 .purple-circle, .pink-circle {
@@ -93,7 +95,7 @@ small {
   color: #99989D;
 }
 
-/* botones para regresar y navegar */
+/* botones para regresar, navegar y desplegar la lista de carros */
 .btn-circle {
   width: 30px;
   height: 30px;

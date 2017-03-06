@@ -1,0 +1,23 @@
+header i {
+
+}
+
+/* Button Next */
+footer button {
+	background-color: #474C62;
+}
+
+section {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+section .tip {
+	margin-bottom: 15px;
+}
+
+
+
+section .price p {
+	font-size: 35px;
+}

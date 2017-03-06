@@ -3,7 +3,7 @@ $(document).ready(init);
 function init() {
   getMyLocation();
   displaySetPickUp();
-  displayRequestLyft();
+  $('#btnPickUp').on('click', displayRequestLyft);
 }
 
 function displaySetPickUp (){
@@ -12,15 +12,14 @@ function displaySetPickUp (){
 }
 
 function displayRequestLyft(){
-    $("#btnPickUp").click(function(){
-        $("setPickUp").hide();
-    });
-    $("#btnPickUp").click(function(){
-        $("requestLyft").show();
-    });
+    $("setPickUp").hide();
+    $('#requestLyft').show();
 }
 
-
+function goBack()
+{
+  window.location="payment.html";
+}
 
 var map;
 

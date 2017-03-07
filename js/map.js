@@ -6,6 +6,7 @@ function init() {
   $('#btnPickUp').on('click', displayRequestLyft);
 }
 
+
 function displaySetPickUp (){
   $('#requestLyft').hide();
   $('#setPickUp').show();
@@ -137,7 +138,30 @@ function addInfoWindow(marker, latLng, content) {
   });
 }
 
+function solicitarEstimado(_data){
+    $.ajax({
+        url:"https://clientes.geekadvice.pe/api/estimado",
+        data:{tipo:1}
+    }).success(function(){
+        console.log(_data);
+        update(_data):
+    });
+}
 
+function requestEstimate(_data){
+    $.ajax({
+        url:"https://clientes.geekadvice.pe/api/estimado",
+        data:{tipo:1}
+    }).success(function(){
+        console.log(_data);
+        update(_data):
+    });
+}
+
+function update(_info){
+    alert(_info.destino);
+    alert(_info.estimado.min);
+}
 
 /*function displayTravelledRouteOnMap(){
   waypts.shift();

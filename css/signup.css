@@ -1,63 +1,47 @@
-header p{
-	font-size: 20px;
-}
-
-header a {
-	text-decoration: none;
-	color: black;
-}
 .title {
 	margin-left:20px;
-}
-.goback {
-	text-decoration: none; 
-	color: black;
-}
-
-.goback span{
-	margin-top: 20px;
-	font-size:40px;
-	color: black;
 }
 
 hr {
 	width: 100%;
 }
+
 section {
 	margin: 0 auto;
+
+}
+/* Getting rid of vertical lines on input boxes*/
+#commentName {
+	border-right: none;
 }
 
-/*botón bandera*/
-.flag-btn{
-	padding: 0px 12px;
+#commentLastName {
+	border-left: none;
 }
-
-.flag {
-	padding-right: -55px;
-}
-/*Codigo de pais*/
-#dialCode {
-    background-color: white;
+/* Last Name Span Erased */
+.spanLastName {
+    padding: 0;
+    background-color: #fff;
     border-right: none;
-}
-/*Número ingresado*/
-.input-phone {
 	border-left: none;
 }
 
-/*Section Botón*/
-.btnNext {
+
+/* Button Next */
+footer .btn-login {
 	width: 100%;
-	height: 100%;
 	padding: 10px; 
-	background-color: #EA0B8C;
+	border:none;
+	border-radius: 5px;
+	background-color: #FC1EBF;
 	color: #fff;
-	border: none;
 }
+
 section a {
 	text-decoration: none;
 	font-size: 30px;
 }
+
 footer {
 	position: absolute;
 	bottom:0px;
@@ -65,3 +49,5 @@ footer {
     left: 0px;
 	margin-bottom: 10px;
 }
+
+

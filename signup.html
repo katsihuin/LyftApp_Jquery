@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Lyft App</title>
 
-  <!-- Inserta tus enlaces aquí -->
+  <!-- CSS enlaces -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	 <link rel="stylesheet" href="css/flags32.css">
+	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/signup.css">
-	<link rel="stylesheet" href="css/login.css">
-	
-
 </head>
 <body>
 	<div class="container">
 		<div id="app-content">
+<!--**********************************************Header**********************************************-->
 			<header>
 				<div class="row">
 					<div class="col-md-1 col-sm-1 col-xs-1">
@@ -30,41 +29,72 @@
 	        		<hr>
   				</div>
 			</header>
+<!--**********************************************UserName & Email**********************************************-->			
 			<section>
 				<div class="container">
-					<div class="row text-center">
-					  <div class="col-md-12">				    
-                        <div class="input-group">
-                            <div class="input-group-btn">
-                                <a href="country.html" type="button" class="btn btn-default flag-btn">
-	                                <div class="">
-	                                	<ul class="list-unstyled f32 input-group-btn "><li class="flag bs" id="flag"></li><span class="caret"></span></ul>
-	                                </div>
-                                </a>   
-                            </div>
-                            <span class="input-group-addon" id="dialCode">+51</span>
-                            <input name="" type="text" class="form-control input-phone" placeholder="">
-                        </div>
-					    <br>
-					    <p>We'll send a text to verify your phone</p>
-					  </div>
+					<div class="row">
+						
+					        <div class="">
+					       		<!-- Nombre y apellido input -->	
+                            	<div class="form-group col-md-12" id="input-name-group">
+	                            	<div class="input-group">
+	                            		<span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+	                                    <input  id="commentName" name="name" type="text" required class="form-control" placeholder="First Name">
+	                            	
+		                            	<span class="input-group-addon spanLastName"></span>
+	                                    <input id="commentLastName" name="lastname" type="text"  class="form-control" required placeholder="Last Name">
+	                            	</div>
+                                </div>
+                                <!-- Mensajes para nombre y apellido input--> 
+                                <span class="help-block" id="commentNamePrompt" style="display: inline; padding-right:30px;"></span>
+                                <span class="help-block" id="commentLastNamePrompt" style="display: inline"></span>
+                                <br>
+                                <!-- Email input -->
+                                <div class="form-group col-md-12" id="input-email-group">
+                                	<div class="input-group">
+	                                    <div class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+	                                    </div>
+	                                    <input id="commentEmail" name="email" type="text" class="form-control" required placeholder="Email">
+                                	</div>
+                                </div>
+                                
+                                <!-- Mensajes para email input--> 
+                                <span class="help-block" id="commentEmailPrompt"></span>
+					        </div>
+					       <!-- Mensaje de boton Next -->
+					        <div class="form-group">
+					        	<div id="commentPrompt" class="alert">
+					      		</div>
+					        </div>
 					</div>
 				</div>
 			</section>
+			<section>
+				<div class="container">
+					<div class="row ">
+						<div class="col-md-10 col-xs-offset-1 text-center">
+                            <div class="checkbox">
+                                <input type="checkbox" name="checkbox" id="commentInfo"> I agree to Lyft's <span style="color:#40A9DD"> Terms of Service</span>
+                            </div>
+                            <span id="commentInfoPrompt"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+			
 			<footer>
 				<div class="container">
 					<div class="row">
 				        <div class="col-md-12 text-center">
-							<a href="login.html"><button class="btnNext">Next</button></a>
+							<button type="button" class="btn-login" id="btnValidation" >Next</button>
 						</div>
 					</div>
 				</div>
 			</footer>
 		</div>
 	</div>
-	<script type='text/javascript' src='js/jquery-3.1.1.js'></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/signup.js"></script>
-
+    <script type='text/javascript' src='js/jquery-3.1.1.js'></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type='text/javascript' src="js/signup.js"></script>
 </body>
 </html>

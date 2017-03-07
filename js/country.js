@@ -10,7 +10,7 @@ function init()
 	$.each(eachCountry, function() 
 	{
 	  	
-	  	var listHTML='<a href="signup.html"><li select=""><div class="flag '+this.code.toLowerCase()+'"'+
+	  	var listHTML='<a href="phone.html"><li select=""><div class="flag '+this.code.toLowerCase()+'"'+
 			  		' style="padding-right:10px;">'+'</div>'+'<span class="dial_code"'+ 
 			  		' style="display:none;">'+this.dial_code+'</span>'+ this.name+'</li></a>';
 

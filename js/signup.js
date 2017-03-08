@@ -46,7 +46,7 @@ function validateForm()
 		$('#commentPrompt').append("<button class='close btn btn-primary text-center' data-dismiss='alert' aria-label='Close'>"+"<span>&times</span></button>");
 		setTimeout(function(){jsHide("commentPrompt");}, 3000);
 		
-		window.location="app.html";
+		window.location="map.html";
 	}
 }
 

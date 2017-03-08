@@ -2,22 +2,22 @@ $(document).ready(init);
 
 function init() {
   getMyLocation();
-  displaySetPickUp();
-  $('#btnPickUp').on('click', displayRequestLyft);
+  displaySetPickUp ();
+  //$('#btnPickUp').on('click', #btnPickUp);
+}
+function displayRequestLyft(){
+  $('#requestLyft').show();
+  $("setPickUp").hide();
 }
 
+//$("#btnPickUp").on('click', displayRequestLyft);
 
 function displaySetPickUp (){
   $('#requestLyft').hide();
   $('#setPickUp').show();
 }
 
-function displayRequestLyft(){
-    $("setPickUp").hide();
-    $('#requestLyft').show();
-}
-
-function goBack()
+function goForward()
 {
   window.location="payment.html";
 }
@@ -138,23 +138,13 @@ function addInfoWindow(marker, latLng, content) {
   });
 }
 
-function solicitarEstimado(_data){
-    $.ajax({
-        url:"https://clientes.geekadvice.pe/api/estimado",
-        data:{tipo:1}
-    }).success(function(){
-        console.log(_data);
-        update(_data):
-    });
-}
-
 function requestEstimate(_data){
     $.ajax({
         url:"https://clientes.geekadvice.pe/api/estimado",
         data:{tipo:1}
     }).success(function(){
         console.log(_data);
-        update(_data):
+        update(_data);
     });
 }
 

@@ -2,9 +2,8 @@ $(document).ready(init);
 
 function init() {
   getMyLocation();
-  displaySetPickUp ();
-  //$('#btnPickUp').on('click', #btnPickUp);
 }
+
 function displayRequestLyft(){
   $('#requestLyft').show();
   $("setPickUp").hide();
@@ -39,14 +38,14 @@ function displayLocation(position) {
   //Valores de latitud y longitud obtenidos de HTML5 API
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
-    console.log(position.coords.latitude,position.coords.longitude);
+    //console.log(position.coords.latitude,position.coords.longitude);
 
 
   // Creando un nuevo objeto para el uso de valores de latitud y longitud con Google map
   var latLng = new google.maps.LatLng(latitude, longitude);
 
-  var div = document.getElementById('location');
-  div.innerHTML = 'Estas aqui: Latitud:' + latitude + ', Longitude: ' + longitude;
+  var div = $('#location');
+  div.html = 'Estas aqui: Latitud:' + latitude + ', Longitude: ' + longitude;
 
   initMap(latLng);
   createMarker(latLng);
@@ -55,6 +54,7 @@ function displayLocation(position) {
 
 function initMap(latLng) {
   //Creando instancia de mapa y asignando al elemento 'map' HTML para renderizarlo.
+  var getMap = $('#map');
    map = new google.maps.Map(document.getElementById('map'), {
     center: latLng,
     zoom: 15
@@ -153,46 +153,3 @@ function update(_info){
     alert(_info.estimado.min);
 }
 
-/*function displayTravelledRouteOnMap(){
-  waypts.shift();
-  waypts.pop();
-  
-  if(waypts.length > 8){
-    waypts = shuffle(waypts);
-  }
-  
-  directionsService.route({
-    origin: start,
-    destination: stop,
-    waypoints: waypts,
-    optimizeWaypoints: true,
-    travelMode: google.maps.TravelMode.DRIVING
-  },function(response, status) {
-    if (status === google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-      
-      var route = response.routes[0];
-      var summaryPanel = document.getElementById('directions-panel');
-      summaryPanel.innerHTML = '';
-      var summary = "";
-      
-      for (var i = 0; i < route.legs.length; i++) {
-        var routeSegment = i + 1;
-        summary = "<strong>Summary:</strong> You have travelled from <b><i>" + route.legs[i].start_address + "</i></b> to <b><i>";
-        summary += route.legs[i].end_address + ".</i></b> Covered <b><i> ";
-        summary += route.legs[i].distance.text + "</i></b> within <b><i>" + route.legs[i].duration.text + "</i></b>.";
-        summaryPanel.innerHTML = summary;
-      }
-    } 
-    else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
-
-var location1 = {lat: -16.42555, lng: -71.45724};
-var marker = new google.maps.Marker({
-position: latLng,
-map: map,
-title: 'taxi lyft',
-icon: 'img/taxi.jpg'});*/

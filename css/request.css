@@ -1,0 +1,22 @@
+/* circulos del estilo lista */
+.purple-circle, .pink-circle {
+  height: 7px;
+  width: 7px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.purple-circle {
+  background-color: #3D0884;
+}
+
+.pink-circle {
+  background-color: #FC1EBF;
+}
+
+/* Button Request Lyft */
+footer .btnRequestLyft {
+  background-color: #FC1EBF;
+} 

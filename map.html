@@ -10,7 +10,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/pickup.css">
+  <link rel="stylesheet" href="css/request.css">
 </head>
 <body>
 
@@ -26,7 +28,7 @@
 <!--Sección de Mapa-->
 	<div class="fluid-container">
 		<div id="app-content">
-			<div id="map" style="height:800px">
+			<div id="map">
 				<!--contenedor del mapa-->
 			</div>
 		</div>
@@ -39,9 +41,13 @@
         <div class="col-sm-12 col-xs-12">
           <!--Sección con la lista de carros con el botón de Set PickUp-->
           <div id="setPickUp">
+          
             <div class="dropup">
-              <button class="btn btn-group btn-default dropdown-toggle btn-circle" type="button" id="dropdownMenu2 address-group " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-group btn-default dropdown-toggle btn-circle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-angle-down fa-stack-4x"></i>
+              </button>
+              <button class="taxi btn btn-group btn-default dropdown-toggle" id="taxiType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
+                <!--Contenedor del taxi escogido-->
               </button>
               <div class="pickup-location">
                   <span>2300 Harrison St</span><br>
@@ -50,9 +56,9 @@
               <ul class="dropdown-menu list-car" aria-labelledby="dropdownMenu2">
                 <li>
                   <div class="row">
-                    <div class="col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12 list">
                       <div class="col-sm-3 col-xs-3">
-                            <img src="img/taxi1.png" alt="">
+                            <img src="img/taxi1.png" class="imgTaxi" alt="">
                       </div>
                       <div class="col-sm-7 col-xs-7">
                           <a href="#" id="lineTaxi">Line</a><br><small>Shared, 2 riders max</small>
@@ -61,9 +67,9 @@
                           <span>3<br>min</span>
                       </div>
                     </div>
-                    <div class="col-sm-12 col-xs-12">  
+                    <div class="col-sm-12 col-xs-12 list">  
                       <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi2.png" alt="">
+                          <img src="img/taxi2.png" class="imgTaxi" alt="">
                       </div>
                       <div class="col-sm-7 col-xs-7">
                           <a href="#" id="lyftTaxi">Lyft</a><br><small>4 seats</small>
@@ -74,7 +80,7 @@
                     </div >
                     <div class="col-sm-12 col-xs-12">
                       <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi3.png" alt="">
+                          <img src="img/taxi3.png" class="imgTaxi" alt="">
                       </div>
                       <div class="col-sm-7 col-xs-7">
                           <a href="#" id="plusTaxi">Plus</a><br><small>6 seats</small>
@@ -85,7 +91,7 @@
                     </div>  
                     <div class="col-sm-12 col-xs-12">
                       <div class="col-sm-3 col-xs-3">
-                      <img src="img/taxi4.png" alt="">
+                      <img src="img/taxi4.png"  class="imgTaxi" alt="">
                       </div>
                       <div class="col-sm-7 col-xs-7">
                         <a href="#" id="premierTaxi">Premier</a><br><small>High-end, 4 seats</small>
@@ -100,11 +106,11 @@
             </div>
             <!--Button Set Pickup-->    
             <div class="text-center">
-               <a href="#"><button type="button" class="btn-login" id="btnValidation btnPickUp" >Set Pickup</button></a>  
+               <a href="#"><button type="button" class="btnPickUp" id="btnValidation btnPickUp" >Set Pickup</button></a>  
             </div>
           </div>
           
-          <div id="requestLyft" >
+          <div id="requestLyft" style="display: none;" >
             <!-- Botón regreso en página Request Lyft -->
             <div class="btn btn-default btn-circle" id="btn-goBack">
               <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -161,7 +167,7 @@
             </div>
             <!--Botón Request Lyft-->    
             <div class="text-center">
-               <a href="#"><button type="button" class="btn-login" id="btnValidation btnRequestLyft" >Request Lyft</button></a>  
+               <a href="#"><button type="button" class="btnRequestLyft" id="btnValidation btnRequestLyft" >Request Lyft</button></a>  
             </div>
           </div>
         </div>
@@ -169,12 +175,14 @@
     </div>
   </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type='text/javascript' src="js/map.js"></script>
-    <script type='text/javascript' src='js/bootstrap.min.js'></script>
-    <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&callback=initMap">
-    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type='text/javascript' src='js/bootstrap.min.js'></script>
+  <script type='text/javascript' src="js/map.js"></script>
+  <script type='text/javascript' src="js/pickup.js"></script>
+  <script type='text/javascript' src="js/request.js"></script>
+  <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&callback=initMap">
+  </script>
 	
 </body>
 </html>

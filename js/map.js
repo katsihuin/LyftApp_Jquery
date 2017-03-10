@@ -1,27 +1,15 @@
 $(document).ready(init);
 
+var map;
+
 function init() {
   getMyLocation();
-}
-
-function displayRequestLyft(){
-  $('#requestLyft').show();
-  $("setPickUp").hide();
-}
-
-//$("#btnPickUp").on('click', displayRequestLyft);
-
-function displaySetPickUp (){
-  $('#requestLyft').hide();
-  $('#setPickUp').show();
 }
 
 function goForward()
 {
   window.location="payment.html";
 }
-
-var map;
 
 function getMyLocation() {
   if (navigator.geolocation) {
@@ -49,17 +37,14 @@ function displayLocation(position) {
 
   initMap(latLng);
   createMarker(latLng);
-
 }
 
 function initMap(latLng) {
   //Creando instancia de mapa y asignando al elemento 'map' HTML para renderizarlo.
-  var getMap = $('#map');
    map = new google.maps.Map(document.getElementById('map'), {
     center: latLng,
     zoom: 15
   });
-
 }
 
 function createMarker(latLng) {
@@ -121,8 +106,6 @@ function createMarker(latLng) {
 
   var content = 'Estas aqui: ' + latLng.lat() + ', ' + latLng.lng();
   addInfoWindow(marker, latLng, content);
-  
-
 }
 
 function addInfoWindow(marker, latLng, content) {

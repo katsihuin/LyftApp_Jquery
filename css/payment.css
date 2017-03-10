@@ -1,7 +1,10 @@
 header i {
 
 }
-
+header .fb-photo img {
+	width:130px; 
+	height:130px;
+}
 /* Button Next */
 footer button {
 	background-color: #474C62;
@@ -19,3 +22,4 @@ section .tip {
 section .price p {
 	font-size: 35px;
 }
+

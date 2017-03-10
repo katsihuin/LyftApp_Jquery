@@ -20,7 +20,7 @@ function init()
 
 function goBack()
 {
-    window.location="main.html";
+    window.location="index.html";
 }
 
 function goForward() 

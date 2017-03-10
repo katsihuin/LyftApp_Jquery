@@ -5,7 +5,7 @@ function init() {
 	$('#lineTaxi').on('click', displayChange);
 
 	$('#btnPickUp').on('click', nextPage);
-	addClickEvent();
+	
 }
 
 

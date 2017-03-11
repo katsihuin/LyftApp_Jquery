@@ -15,6 +15,9 @@
 .pink-circle {
   background-color: #FC1EBF;
 }
+button .btn-default {
+  background-color: #FC1EBF;
+}
 
 /* Button Request Lyft */
 footer .btnRequestLyft {

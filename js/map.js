@@ -43,13 +43,13 @@ function initMap(latLng) {
   //Creando instancia de mapa y asignando al elemento 'map' HTML para renderizarlo.
    map = new google.maps.Map(document.getElementById('map'), {
     center: latLng,
-    zoom: 15
+    zoom: 5
   });
 }
 
-function createMarker(latLng) {
+function createMarker(latLng, latitude, longitude) {
   var markerOptions = {
-    position: latLng,
+    position:latLng,
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
@@ -57,10 +57,11 @@ function createMarker(latLng) {
     icon: 'img/person2.png'
   }
   var marker = new google.maps.Marker(markerOptions);
+  var latLng = new google.maps.LatLng(latitude, longitude);
     
-    var location1 = {lat: -16.4526377 , lng: -71.531716};
+    
     var marker = new google.maps.Marker({
-    position: location1,
+    position: new google.maps.LatLng(latitude + 0.002, longitude),
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
@@ -68,9 +69,9 @@ function createMarker(latLng) {
     icon: 'img/coche2x.png'});
         
    
-    var location2 = {lat: -16.450210, lng: -71.524850};
+    var location2 = {latitude, longitude};
     var marker = new google.maps.Marker({
-    position: location2,
+    position: new google.maps.LatLng(latitude + 0.002, longitude),
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
@@ -79,7 +80,7 @@ function createMarker(latLng) {
     
     var location3 = {lat: -16.460787, lng: -71.528755};
     var marker = new google.maps.Marker({
-    position: location3,
+    position: new google.maps.LatLng(latitude + 0.002, longitude),
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
@@ -88,7 +89,7 @@ function createMarker(latLng) {
     
     var location4 = {lat: -16.455830 , lng: -71.538262};
     var marker = new google.maps.Marker({
-    position: location4,
+    position: new google.maps.LatLng(latitude + 0.002, longitude),
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
@@ -97,7 +98,7 @@ function createMarker(latLng) {
     
     var location5 = {lat: -16.456036 , lng: -71.520023};
     var marker = new google.maps.Marker({
-    position: location5,
+    position: new google.maps.LatLng(latitude + 0.002, longitude),
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,

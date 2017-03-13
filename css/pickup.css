@@ -83,3 +83,16 @@ footer .btnPickUp {
     border-radius: 50%;
     overflow: hidden;
 }
+
+/* cambio de color en mouseover*/
+.list {
+  padding: 0;
+}
+
+.list.active {
+    background: #F3F3F5;
+
+}
+.list.active small, .purple {
+    color: #3D0884;
+}

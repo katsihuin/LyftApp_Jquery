@@ -3,9 +3,15 @@ $(document).on('ready', init);
 
 function init() {
 	$('#lineTaxi').on('click', displayChange);
-
 	$('#btnPickUp').on('click', nextPage);
-	
+	$(".list-car .list").mouseover(function(){
+            $(this).addClass("active");
+            $(this).addClass("purple");
+        });
+    $(".list-car .list").mouseleave(function(){
+            $(this).removeClass("active");
+            $(this).removeClass("purple");
+    });	
 }
 
 

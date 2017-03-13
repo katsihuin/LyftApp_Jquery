@@ -4,6 +4,7 @@ $(document).on('ready', init);
 function init() {
 	$('#lineTaxi').on('click', displayChange);
 	$('#btnPickUp').on('click', nextPage);
+	$('#btn-goBack').on('click', goBack);
 	$(".list-car .list").mouseover(function(){
             $(this).addClass("active");
             $(this).addClass("purple");
@@ -14,6 +15,10 @@ function init() {
     });	
 }
 
+function goBack() {
+	$('#requestLyft').hide();
+  	$('#setPickUp').show();
+}
 
 function displayChange(){
     $('#dropdownMenu2').hide();

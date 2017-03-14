@@ -1,4 +1,4 @@
-$(document).ready(init);
+$(document).on('ready', init);
 
 var inputPhoneNumber=$('#inputPhoneNumber'); 
 

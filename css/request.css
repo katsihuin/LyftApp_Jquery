@@ -23,3 +23,11 @@ button .btn-default {
 footer .btnRequestLyft {
   background-color: #FC1EBF;
 } 
+
+#mydiv > .btn-default {
+  background:transparent;
+  border: none;
+}
+.dropup{
+  
+}

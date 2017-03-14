@@ -17,7 +17,7 @@ footer .btnPickUp {
   background-color: #3D0884;
 } 
 
-.dropup {
+.dropup-pickup {
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -27,18 +27,18 @@ footer .btnPickUp {
   position: relative;
 }
 
-.dropup .pickup-location {
+.dropup-pickup .pickup-location {
   margin-left: 20px;
   display: inline-block;
   vertical-align: middle;
 }
 
-.dropup .list-car {
+.dropup-pickup .list-car {
   width: 85%;
   margin-bottom: 15px;
 }
 
-.dropup button {
+.dropup-pickup button {
   margin-left: 10px;
   color: black;
 }

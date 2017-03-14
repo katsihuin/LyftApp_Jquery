@@ -41,7 +41,7 @@
         <div class="col-sm-12 col-xs-12">
           <!--Sección con la lista de carros con el botón de Set PickUp-->
           <div id="setPickUp">
-            <div class="dropup">
+            <div class="dropup dropup-pickup">
               <button class="btn btn-group btn-default dropdown-toggle btn-circle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-angle-down fa-stack-4x"></i>
               </button>
@@ -61,10 +61,10 @@
                     <a href="#" id="lineTaxi">
                       <div class="col-sm-12 col-xs-12 list">
                         <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi1.png" class="imgTaxi" alt="">
+                          <img src="img/taxi1.png" id="carImgPickUp" alt="">
                         </div>
                         <div class="col-sm-7 col-xs-7">
-                          <span id="type">Line</span><br><small>Shared, 2 riders max</small>
+                          <span id="carNamePickUp">Line</span><br><small id="carSeatsPickUp">Shared, 2 riders max</small>
                         </div>
                         <div class="col-sm-2 col-xs-2">
                           <span>3<br>min</span>
@@ -74,10 +74,10 @@
                     <a href="#" id="lyftTaxi">
                       <div class="col-sm-12 col-xs-12 list">  
                         <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi2.png" class="imgTaxi" alt="">
+                          <img src="img/taxi2.png" id="carImgPickUp" alt="">
                         </div>
                         <div class="col-sm-7 col-xs-7">
-                          <span id="type">Lyft</span><br><small>4 seats</small>
+                          <span id="carNamePickUp">Lyft</span><br><small id="carSeatsPickUp">4 seats</small>
                         </div>
                         <div class="col-sm-2 col-xs-2">
                           <span>3<br>min</span>
@@ -87,10 +87,10 @@
                     <a href="#" id="plusTaxi">
                       <div class="col-sm-12 col-xs-12 list">
                         <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi3.png" class="imgTaxi" alt="">
+                          <img src="img/taxi3.png" id="carImgPickUp" alt="">
                         </div>
                         <div class="col-sm-7 col-xs-7">
-                          <span id="type">Plus</span><br><small>6 seats</small>
+                          <span id="carNamePickUp">Plus</span><br><small id="carSeatsPickUp">6 seats</small>
                         </div>
                         <div class="col-sm-2 col-xs-2">
                           <span>3<br>min</span>
@@ -100,10 +100,10 @@
                     <a href="#" id="premierTaxi">
                       <div class="col-sm-12 col-xs-12 list">
                         <div class="col-sm-3 col-xs-3">
-                          <img src="img/taxi4.png"  class="imgTaxi" alt="">
+                          <img src="img/taxi4.png"  id="carImgPickUp" alt="">
                         </div>
                         <div class="col-sm-7 col-xs-7">
-                          <span id="type">Premier</span><br><small>High-end, 4 seats</small>
+                          <span id="carNamePickUp">Premier</span><br><small id="carSeatsPickUp">High-end, 4 seats</small>
                         </div>
                         <div class="col-sm-2 col-xs-2">
                           <span>3<br>min</span>
@@ -135,10 +135,10 @@
                 <tbody>
                   <tr>
                     <td class="active text-center">
-                      <img src="img/lyftcar.png" class="pull-right">
+                      <img src="img/lyftcar.png" class="pull-right" id="carImgRequest">
                     </td>
                     <td class="active">
-                      <span>Lyft <br><small>Fast ride, 4 seats</small></span>
+                      <span id="carNameRequest">Lyft <br><small id="carSeatsRequest">Fast ride, 4 seats</small></span>
                     </td>  
                   </tr>
                   <tr>
@@ -151,26 +151,34 @@
                     </td>
                     <td class="active">
                       <div class="text-center">
-                        <span>$6-12</span><br> 
+                        <span id="priceEstimate">$6-12</span><br> 
                         <small class="text-center">Price Estimate</small>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <div class="purple-circle">
+                      <div class="dropup pull-left" id="mydiv" >
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div class="purple-circle"></div><span style="padding-left: 10px;" id="addressRequest">2300 Harrison Street</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <input type="" name="">
+                        </ul>
                       </div>
-                      <span style="padding-left: 10px;">2300 Harrison St</span>
                     </td>
-                    <td></td>
                   </tr>
                   <tr>
                     <td>
-                      <div class="pink-circle">
+                      <div class="dropdown pull-left" id="mydiv" >
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div class="pink-circle"></div><span style="padding-left: 10px;">Add destination</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <input type="" name="">
+                        </ul>
                       </div>
-                      <span style="padding-left: 10px;">Caltrain Station</span>
                     </td>
-                    <td></td>
                   </tr>
                 </tbody>
               </table>

@@ -1,4 +1,5 @@
-$(document).ready(init);
+$(document).on('ready', init);
+
 $('span'.helpblock)
 
 function init()

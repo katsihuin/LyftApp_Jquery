@@ -1,9 +1,8 @@
-$(document).ready(init);
+$(document).on('ready', init);
 
 var map;
 
 function init() {
-  //$('#address').on('dblclick', editAddress);
   getMyLocation();
 }
 

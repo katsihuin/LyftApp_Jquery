@@ -1,4 +1,5 @@
 $(document).on('ready', init);
+
 var chooseCar = false;
 
 function init(){
@@ -27,12 +28,14 @@ function addClickEvent(){
 
 function onClickList(event){
 	
-	var imgTaxi= $(event.currentTarget).find('.imgTaxi').attr('src');
-	localStorage.setItem('srcImgTaxi', imgTaxi);
+	var imgCar= $(event.currentTarget).find('#carImgPickUp').attr('src');
+	localStorage.setItem('srcCarImg', imgCar);
 
+	var carName= $(event.currentTarget).find('#carNamePickUp').text();
+	localStorage.setItem('srcCarName', carName);
 
-	var name= $(event.currentTarget).find('#type').text();
-	localStorage.setItem('nameCar',name);
+	var carSeats= $(event.currentTarget).find('#carSeatsPickUp').text();
+	localStorage.setItem('srcCarSeats', carSeats);
 	
 	if(name=='Line')
     {
@@ -57,7 +60,7 @@ function onClickList(event){
 }
 
 function displayChange(){
-	var TheImage = localStorage.getItem('srcImgTaxi');
+	var TheImage = localStorage.getItem('srcCarImg');
 	$('#dropdownMenu2').hide();
 	$('#taxiType').show();
 	$('#taxiType').css({ 'background-image': "url(" + TheImage + ")"});
@@ -69,10 +72,18 @@ function goBack(){
 }
 
 function nextPage(){
-	if (chooseCar == false){
-		alert("escoge por favor un tipo de vehículo");
+	if (chooseCar = false){
+		alert("Debe escoger un tipo de vehículo");
 	}else{
 		$('#setPickUp').hide();
     	$('#requestLyft').show();
 	}
+	saveAddress();
+}
+
+/* Guardar dirección */
+function saveAddress(address)
+{
+	var address = $('#address').text();
+ 	localStorage.setItem('srcAddress',address);
 }

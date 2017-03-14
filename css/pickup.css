@@ -62,12 +62,16 @@ footer .btnPickUp {
     background: linear-gradient(rgb(63,3,128), rgb(254,0,187));
     -webkit-border-radius: 55px;
     -moz-border-radius: 55px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
     display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
-
+.taxi.active{
+    background: #FFF;
+}
 .taxi:after {
     position: absolute;
     display: block;
@@ -76,11 +80,10 @@ footer .btnPickUp {
     width: 40px;
     height: 40px;
     content: "";
-    background-color: #fff;
-    background-image: url(../img/taxi1.png);
+    /*background-image: url(../img/taxi1.png);*/
     background-repeat: no-repeat;
     background-size: 100% 100%;;
-    border-radius: 50%;
+    border-radius: 100%;
     overflow: hidden;
 }
 

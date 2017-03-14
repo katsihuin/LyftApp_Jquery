@@ -3,19 +3,20 @@ $(document).ready(init);
 var map;
 
 function init() {
+  //$('#address').on('dblclick', editAddress);
   getMyLocation();
 }
 
 function getMyLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(displayLocation, geoError);
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
   } else {
     alert('Sin soporte de geolocalización');
   }
 }
 
 //función invoca asincrónicamente por la API de geolocalización HTML5
-function displayLocation(position) {
+function geoSuccess(position) {
 
   //Valores de latitud y longitud obtenidos de HTML5 API
   var latitude = position.coords.latitude;
@@ -30,7 +31,7 @@ function displayLocation(position) {
 
 //función Error
 function geoError() {
-    alert("Geocoder failed.");
+    alert("Geocoder falló.");
 }
 
 function initMap(latLng) {
@@ -39,13 +40,14 @@ function initMap(latLng) {
     center: latLng,
     zoom: 15
   });
+
 }
 
-function getAddress(geocoder, location, coords) {
-  var latlng = location;
+function getAddress(geocoder, latlng, coords) {
+  var latlng = latlng;
   geocoder.geocode({'latLng': latlng}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      
+      //console.log(results);
       if (results[0]) {
         //dirección formateada
         $('#'+coords).html(results[0].formatted_address);
@@ -54,10 +56,11 @@ function getAddress(geocoder, location, coords) {
         window.alert('No se encontro ningún resultado');
       }
     } else {
-      window.alert('Geocoder failed due to: ' + status);
+      window.alert('El geocoder falló debido a: ' + status);
     }
   });
 }
+
 
 function createMarker(position) {
   map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
@@ -67,7 +70,7 @@ function createMarker(position) {
     title:"Aqui estoy!!!",
     icon: "img/person2.png"
   });
-  
+
   var markerOptions = {
     //position:latLng,
     map: map,
@@ -122,5 +125,28 @@ function createMarker(position) {
   icon: 'img/coche6x.png'});
 
   var geocoder = new google.maps.Geocoder();
-  getAddress(geocoder, currentMarker.position,'direccion');
+  getAddress(geocoder, currentMarker.position,'address');
+
+  //autoComplete();
 }
+
+/*function autoComplete(){
+  var input = $('#mapSearch');
+  var searchBox = new google.maps.places.searchBox(input);
+
+
+  //place change event on search box
+  google.maps.event.addListener(searchBox, 'places_changed', function(){
+    var places = searchBox.getPlaces();
+    //bounds
+    var bounds  = new google.maps.LatLngBounds();
+    var i, place;
+
+    for (i=0; places[i]; i++){
+      console.log(place.geometry.location);
+      bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+    map.setZoom(15);
+  })
+}*/

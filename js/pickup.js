@@ -1,28 +1,17 @@
 $(document).on('ready', init);
 
-
-function init() {
-	$('#lineTaxi').on('click', displayChange);
+function init(){
 	$('#btnPickUp').on('click', nextPage);
 	$('#btn-goBack').on('click', goBack);
-	$(".list-car .list").mouseover(function(){
-            $(this).addClass("active");
-            $(this).addClass("purple");
-        });
-    $(".list-car .list").mouseleave(function(){
-            $(this).removeClass("active");
-            $(this).removeClass("purple");
-    });	
+	$(".list-car .list").on('mouseover', onMouseOver);
+    $(".list-car .list").on('mouseleave', onMouseLeave);
+    $(".dropdown-menu li a").on('click', displayChange);
+    addClickEvent();
 }
 
-function goBack() {
+function goBack(){
 	$('#requestLyft').hide();
   	$('#setPickUp').show();
-}
-
-function displayChange(){
-    $('#dropdownMenu2').hide();
-    $('#taxiType').show();
 }
 
 function nextPage(){
@@ -30,35 +19,49 @@ function nextPage(){
     $('#requestLyft').show();
 }
 
-function addClickEvent()
-{
+function onMouseOver() {
+	$(this).addClass("active");
+    $(this).addClass("purple");
+}
+
+function onMouseLeave() {
+	$(this).removeClass("active");
+    $(this).removeClass("purple");
+}
+
+function addClickEvent(){
 	var list = $('.list');
 	$.each(list, function() {$(this).on('click',onClick)});
 }
 
-function onClick(event)
-{
+function onClick(event){
 	var imgTaxi= $(event.currentTarget).find('.imgTaxi').attr('src');
 	localStorage.setItem('srcImgTaxi', imgTaxi);
 
-	var name= $(event.currentTarget).find('a').text();
+	var name= $(event.currentTarget).find('#type').text();
 	localStorage.setItem('nameCar',name);
 
-	var taxi = $('a').text();
-
-	switch(taxi)
-	{
-		case 1:
-			setObjectLocalStorage('type','1'); 
-			break;
-		case 2:
-			setObjectLocalStorage('type','2'); 
-			break;
-		case 3:
-			setObjectLocalStorage('type','3'); 
-			break;
-		case 4:
-			setObjectLocalStorage('type','4'); 
-			break;
-	}
+	if(name=='Line')
+    {
+    	localStorage.setItem('type',1); 
+    }
+	if(name=='Lyft')
+    {
+    	localStorage.setItem('type',2); 
+    }
+    if(name=='Plus')
+    {
+    	localStorage.setItem('type',3); 
+    }
+    if(name=='Premier')
+    {
+    	localStorage.setItem('type',4); 
+    }
 }
+
+function displayChange(){
+	var TheImage = localStorage.getItem('srcImgTaxi');
+	$('#dropdownMenu2').hide();
+	$('#taxiType').show();
+	$('#taxiType').css({ 'background-image': "url(" + TheImage + ")"});
+}	

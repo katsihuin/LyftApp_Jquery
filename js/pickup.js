@@ -60,15 +60,16 @@ function onClickList(event){
 }
 
 function displayChosenCar(){
-	var TheImage = localStorage.getItem('srcCarImg');
+	var carImg = localStorage.getItem('srcCarImg');
 
 	$('#dropdownMenu2').hide();
 	$('#taxiType').show();
-	$('#taxiType').css({ 'background-image': "url(" + TheImage + ")"});
+	$('#taxiType').css({ 'background-image': "url(" + carImg + ")"});
+	chooseCar = true;
 }	
 
 function displayRequestSection(){
-	if (chooseCar == true){
+	if (chooseCar == false){
 		alert("Debe escoger un tipo de vehículo");
 	}else{
 		$('#setPickUp').hide();
@@ -78,8 +79,7 @@ function displayRequestSection(){
 }
 
 /* Guardar dirección */
-function saveAddress(address)
-{
+function saveAddress(address){
 	var address = $('#address').text();
  	localStorage.setItem('srcAddress',address);
 }

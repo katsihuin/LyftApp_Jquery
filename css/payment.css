@@ -1,25 +1,46 @@
-header i {
+header .links
+{
+    margin-top: 15px;
 
 }
-header .fb-photo img {
+header .logo{
+    width: 40px;
+    display: inline-block;
+    color: white;
+}
+.driver-photo {
+	margin:0 auto;
+}
+
+.driver-photo img {
 	width:130px; 
 	height:130px;
+    margin-bottom: 30px;
+    border-radius: 100%;
+    padding: 5px;
+    border: 1px outset #99989D;
 }
+
 /* Button Next */
 footer button {
 	background-color: #474C62;
 }
 
-section {
+section .payment {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
+	left: 50%;
+	-webkit-transform: translateX(-50%) translatey(-50%);
+    -moz-transform: translateX(-50%) translatey(-50%);
+    transform: translateX(-50%) translatey(-50%);
 }
+
 section .tip {
 	margin-bottom: 15px;
 }
 
-section .price p {
+#price{
 	font-size: 35px;
 }
+
 

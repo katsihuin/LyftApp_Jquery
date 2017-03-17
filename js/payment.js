@@ -1,20 +1,24 @@
 $(document).on('ready', init);
 
 function init(){
-     resquestDriver();
+     resquestRide();
    }
 
-function requestDriver(){
+function requestRide(){
    $.ajax({
        url:"https://clientes.geekadvice.pe/api/carrera",
-       data:{tipo:1}
+       data:{"tipo":type}
    }).success(function(_data){
-       updateProfile(_data);
+       updateRideInfo(_data);
    });
 }
 
-function updateProfile(_info){
-   $('#profilePic').attr('src',_info.conductor.url);
-   $('#nameDriver').html(_info.conductor.name);
-   $('#price').text(_info.final);  
+function updateRideInfo(_info){
+   $('#driverPhoto').attr('src',_info.conductor.url);
+   $('#driverName').html(_info.conductor.name);
+   $('#finalPrice').text(_info.estimado.moneda+_info.final);  
 }
+
+
+/*var min = localStorage.getItem('minPrice');
+  var max = localStorage.getItem('maxPrice');*/

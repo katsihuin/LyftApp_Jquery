@@ -49,10 +49,11 @@ function updateAddress() {
 
 /* Continuar a la pagina del Conductor asignado */
 function nextPage(){
-  var destination= $('#dropOffLocation').text();
+  /*var destination= $('#dropOffLocation').text();
   if(destination=='Add Drop-Off Location'){
     alert("Ingresa la dirección de destino");
   }else{
   window.location= "payment.html";
-  }
+  }*/
+  window.location = "payment.html"
 }

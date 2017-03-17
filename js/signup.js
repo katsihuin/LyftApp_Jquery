@@ -70,11 +70,20 @@ function producePrompt(message, promptLocation, color)
 	$('#' + promptLocation).css({"color":"color"});
 }
 
+/* Convierte en mayuscula la primera letra de una palabra*/
+function firstToUpperCase(_texto)
+{
+	var result = _texto[0].toUpperCase() + _texto.slice(1);
+	var mayus = result.split(" ");
+	return result;
+}
+
 /* Valida Nombre*/
 function validateName()
 {
     var inputName = $('#commentName');
-	var name =  inputName.val();
+	//var name =  inputName.val();
+	var name = firstToUpperCase(inputName.val()) ;
 	var nameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 	
 	if (name == null || name.length == 0 || /^\^s+$/g.test(name))
@@ -109,7 +118,8 @@ function validateName()
 function validateLastName()
 {
 	var inputLastName = $('#commentLastName');
-	var lastName =  inputLastName.val();
+	//var lastName =  inputLastName.val();
+	var lastName = firstToUpperCase(inputLastName.val()) ;
 	var lastNameReg = /^[A-Z][a-z]*[a-zA-Z]$/;
 
 	if (lastName == null || lastName.length == 0 || /^\^s+$/.test(lastName))

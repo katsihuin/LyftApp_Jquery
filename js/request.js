@@ -1,11 +1,19 @@
 $(document).on('ready', init);
 
 function init(){
-
+  var dropOffLocation = null;
+  $('#btnRequestLyft').on('click', nextPage);
+  $('#btn-goBack').on('click', goBack);
 	$('#carImgRequest').attr({'src': localStorage.getItem('srcCarImg')});
 	$('#carNameRequest').text(localStorage.getItem('srcCarName'));
 	$('#carSeatsRequest').text(localStorage.getItem('srcCarSeats'));
 	requestPriceEstimate();
+}
+
+/* Regresa a la sección PickUP */
+function goBack(){
+  $('#requestLyft').hide();
+  $('#setPickUp').show();
 }
 
 /* Estimado de Precio */
@@ -37,6 +45,15 @@ function updatePriceEstimate(_info) {
 function updateAddress() {
   var address = localStorage.getItem('srcAddress');
   $('#addressRequest').text(address);
+ 
 }
 
-
+/* Continuar a la pagina del Conductor asignado */
+function nextPage(){
+  var destination= $('#dropOffLocation').text();
+  if(destination=='Add Drop-Off Location'){
+    alert("Ingresa la dirección de destino");
+  }else{
+  window.location= "payment.html";
+  }
+}

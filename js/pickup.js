@@ -3,11 +3,11 @@ $(document).on('ready', init);
 var chooseCar = false;
 
 function init(){
-	$('#btnPickUp').on('click', nextPage);
+	$('#btnPickUp').on('click', displayRequestSection);
 	$('#btn-goBack').on('click', goBack);
 	$(".list-car .list").on('mouseover', onMouseOver);
     $(".list-car .list").on('mouseleave', onMouseLeave);
-    $(".dropdown-menu li a").on('click', displayChange);
+    $(".dropdown-menu li a").on('click', displayChosenCar);
     addClickEvent();
 }
 
@@ -59,20 +59,16 @@ function onClickList(event){
     }
 }
 
-function displayChange(){
+function displayChosenCar(){
 	var TheImage = localStorage.getItem('srcCarImg');
+
 	$('#dropdownMenu2').hide();
 	$('#taxiType').show();
 	$('#taxiType').css({ 'background-image': "url(" + TheImage + ")"});
 }	
 
-function goBack(){
-	$('#requestLyft').hide();
-  	$('#setPickUp').show();
-}
-
-function nextPage(){
-	if (chooseCar = false){
+function displayRequestSection(){
+	if (chooseCar != false){
 		alert("Debe escoger un tipo de vehículo");
 	}else{
 		$('#setPickUp').hide();

@@ -44,8 +44,7 @@ function updatePriceEstimate(_info) {
 /* Actualizacion Address */
 function updateAddress() {
   var address = localStorage.getItem('srcAddress');
-  $('#addressRequest').text(address);
- 
+  $('#pickUpLocation').text(address);
 }
 
 /* Continuar a la pagina del Conductor asignado */

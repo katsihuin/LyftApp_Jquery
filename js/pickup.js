@@ -68,7 +68,7 @@ function displayChosenCar(){
 }	
 
 function displayRequestSection(){
-	if (chooseCar != false){
+	if (chooseCar == true){
 		alert("Debe escoger un tipo de vehículo");
 	}else{
 		$('#setPickUp').hide();

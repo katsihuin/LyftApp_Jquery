@@ -1,7 +1,6 @@
 $(document).on('ready', init);
 
 var dropOffLocation = null;
-var miubicacion='nada';
 var currentMarker = null;
 var directionsDisplay = null;
 var directionsService = null;
@@ -117,6 +116,12 @@ function displayDropOff(){
 function calculateRoute(start, end){
   var bounds = new google.maps.LatLngBounds();
   map.fitBounds(bounds);
+
+  var listener = google.maps.event.addListener(map, "idle", function() { 
+  if (map.getZoom() > 14) map.setZoom(14); 
+  google.maps.event.removeListener(listener); 
+  });
+
   var request = {
     origin: start,
     destination: end,
@@ -130,7 +135,7 @@ function calculateRoute(start, end){
       alert("Se ha producido un error en la dirección solicitada: " + status);
     }
   });
-  nextPage();
+  
 }
 
 /*Continuar a la pagina del Conductor asignado */

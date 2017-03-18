@@ -130,11 +130,12 @@ function calculateRoute(start, end){
       alert("Se ha producido un error en la dirección solicitada: " + status);
     }
   });
+  nextPage();
 }
 
 /*Continuar a la pagina del Conductor asignado */
 function nextPage(){
-  var destination= $('#dropOffLocation').text();
+  var destination= $('#dropOffContent').text();
   if(destination=='Add Drop-Off Location'){
     alert("Ingresa la dirección de destino");
   }else{

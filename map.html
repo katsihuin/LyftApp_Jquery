@@ -135,7 +135,7 @@
                 <tbody>
                   <tr>
                     <td class="active text-center">
-                      <img src="img/lyftcar.png" class="" id="carImgRequest">
+                      <img src="img/lyftcar.png" id="carImgRequest">
                     </td>
                     <td class="active">
                       <span id="carNameRequest">Lyft</span><br><small id="carSeatsRequest">Fast ride, 4 seats</small>
@@ -160,10 +160,10 @@
                     <td>
                       <div class="dropup pull-left" id="mydiv" >
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div class="purple-circle"></div><span style="padding-left: 10px;" id="pickUpLocation">2300 Harrison Street</span>
+                          <div class="purple-circle"></div><span id="pickUpLocation">2300 Harrison Street</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <input type="" name="">
+                          <input id="pickUpLocation" type="text" size="50">
                         </ul>
                       </div>
                     </td>
@@ -172,7 +172,7 @@
                     <td>
                       <div class="dropdown pull-left" id="mydiv" >
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div class="pink-circle"></div><span style="padding-left: 10px;">Add Drop-Off Location</span>
+                          <div class="pink-circle"></div><span id="dropOffContent">Add Drop-Off Location</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                            <input id="dropOffLocation" type="text" size="50">
@@ -195,7 +195,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type='text/javascript' src='js/bootstrap.min.js'></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&libraries=places&callback=initMap"
+  <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNMkMkCp27tlSE7ku142i-SiFk_xSEllg&libraries=places&callback=initMap"
          async defer>  
   </script>
   <script type='text/javascript' src="js/map.js"></script>

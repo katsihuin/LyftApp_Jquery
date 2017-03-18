@@ -65,7 +65,7 @@ function displayChosenCar(){
 	$('#dropdownMenu2').hide();
 	$('#taxiType').show();
 	$('#taxiType').css({ 'background-image': "url(" + carImg + ")"});
-	chooseCar = true;
+	chooseCar =true;
 }	
 
 function displayRequestSection(){

@@ -25,7 +25,7 @@ function goBack(){
 function requestPriceEstimate() {
 	var type = localStorage.getItem('type');
     $.ajax({
-        url:"http://clientes.geekadvice.pe/api/estimado",
+        url:"https://clientes.geekadvice.pe/api/estimado",
         data:{"tipo":type}
     }).success(function(_data){
       //console.log(_data.estimado); 

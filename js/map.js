@@ -30,14 +30,14 @@ function geoSuccess(position) {
 
 //función Error
 function geoError() {
-    alert("Geocoder falló.");
+  alert("Geocoder falló.");
 }
 
 function initMap(latLng) {
   //Creando instancia de mapa y asignando al elemento 'map' HTML para renderizarlo.
-   map = new google.maps.Map(document.getElementById('map'), {
-    center: latLng,
-    zoom: 15
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: latLng,
+  zoom: 15
   });
 
 }
